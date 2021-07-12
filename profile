@@ -53,6 +53,8 @@ export TRASH_DIR="${XDG_DATA_HOME}/Trash"
 
 export XDG_OPEN=open
 
+export ENV="${XDG_FILES_DIR}/dots/shell/ksh/main.shellrc"
+
 # Set java variables
 # ------------------
 export _JAVA_AWT_WM_NONREPARENTING=1

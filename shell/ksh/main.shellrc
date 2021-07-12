@@ -3,7 +3,7 @@ if [ ! -t 0 ] ; then
 fi
 
 SHELLRC_DIR=${XDG_FILES_DIR}/dots/shell/ksh
-PS1_STYLE="user-pwd" # "pwd", "user", "user-pwd"
+PS1_STYLE="pwd" # "pwd", "user", "user-pwd", "pwd-user"
 PS1_GIT="true"
 
 . ${SHELLRC_DIR}/aliases.shellrc

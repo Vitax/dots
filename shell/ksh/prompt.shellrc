@@ -28,17 +28,21 @@ _ps1_print() {
 		*-256color)
 			case ${PS1_STYLE:-user-pwd} in
 				user-pwd)
-					printf '# '
+                    printf "%s" '# '
 					_ps1_print_user
 					printf "%s" '\[\e[0;32m\] at '
 					_ps1_print_pwd
 					;;
+                pwd-user)
+                    printf "%s" '# '
+					_ps1_print_pwd
+					printf "%s" ' '
+					_ps1_print_user
+					;;
 				user)
-					printf '# '
 					_ps1_print_user
 					;;
 				pwd)
-					printf '# '
 					_ps1_print_pwd
 					;;
 			esac
@@ -49,7 +53,7 @@ _ps1_print() {
 
 			_reset_formatting
 			printf '\n'
-			printf '$ '
+			printf '> '
 
 			;;
 		dumb)
