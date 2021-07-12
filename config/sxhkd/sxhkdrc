@@ -1,0 +1,37 @@
+# Restart sxhkd
+super + shift + r
+	pkill -USR1 -x sxhkd
+
+# Application bindings
+alt + p
+	launcher dmenu -b -x 48 -y 48 -l 8 -w 480 -h 48
+
+alt + shift + Return
+	stwrapper
+
+alt + ctrl + Return
+	stwrapper t
+
+alt + shift + e
+	pcmanfm
+
+# Suspend, Lock
+super + shift + {x,l}
+	{sudo ZZZ, slock}
+
+# Brightness
+XF86MonBrightnessDown
+	bright -d 2
+
+XF86MonBrightnessUp
+	bright -i 2
+
+# Volume
+XF86AudioMute
+	vol -t
+
+XF86AudioLowerVolume
+	vol -d 2
+
+XF86AudioRaiseVolume
+	vol -i 2
