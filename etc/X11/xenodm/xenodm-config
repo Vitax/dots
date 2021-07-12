@@ -1,0 +1,9 @@
+DisplayManager.servers:         /etc/X11/xenodm/Xservers
+DisplayManager.errorLogFile:    /var/log/xenodm.log
+
+DisplayManager*resources:       /etc/X11/xenodm/Xresources
+DisplayManager*startup:         /etc/X11/xenodm/Xstartup
+DisplayManager*session:         /etc/X11/xenodm/Xsession
+
+DisplayManager._0.authorize:    true
+DisplayManager*authorize:       false
