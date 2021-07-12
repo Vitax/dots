@@ -1,0 +1,10 @@
+Xft.dpi: 100
+Xft.antialias: true
+Xft.autohint: true
+Xft.hinting: true
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  full
+Xft.rgba: rgb
+
+Xcursor.theme: Adwaita
+Xcursor.size: 32
