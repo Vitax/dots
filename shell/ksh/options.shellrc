@@ -1,0 +1,10 @@
+case ${0##*/} in
+	*ksh)
+		set -o csh-history
+		set -o trackall
+		set -o bgnice
+	esac
+
+set -o vi
+set -o ignoreeof
+

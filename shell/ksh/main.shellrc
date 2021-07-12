@@ -1,0 +1,26 @@
+if [ ! -t 0 ] ; then
+    return
+fi
+
+SHELLRC_DIR=${XDG_FILES_DIR}/dots/shell/ksh
+PS1_STYLE="user-pwd" # "pwd", "user", "user-pwd"
+PS1_GIT="true"
+
+. ${SHELLRC_DIR}/aliases.shellrc
+. ${SHELLRC_DIR}/builtins.shellrc
+. ${SHELLRC_DIR}/dev.shellrc
+. ${SHELLRC_DIR}/functions.shellrc
+. ${SHELLRC_DIR}/generic.shellrc
+
+if command -v pkg_add > /dev/null ; then
+	. ${SHELLRC_DIR}/openbsd.shellrc
+elif command -v pacman > /dev/null ; then
+	. ${SHELLRC_DIR}/arch.shellrc
+fi
+
+. ${SHELLRC_DIR}/options.shellrc
+. ${SHELLRC_DIR}/prompt.shellrc
+. ${SHELLRC_DIR}/templates.shellrc
+. ${SHELLRC_DIR}/uncategorized.shellrc
+
+unset SHELLRC_DIR

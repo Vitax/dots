@@ -1,0 +1,37 @@
+# OpenBSD
+# -------
+
+command -v pkg_add > /dev/null || return
+
+# stop .core file generation
+ulimit -c 0
+
+alias {doas,dosa,daos,sudo}='TERM=vt100 doas'
+alias sg='sysctl | grep -i'
+alias disks='sysctl -n hw.disknames'
+alias disklabel='doas disklabel'
+alias pfdump='doas tcpdump -n -e -ttt -r /var/log/pflog' # dump all to stdout
+alias pfdrop='doas tcpdump -nettti pflog0 action drop'   # follow dropped
+alias netstart='doas sh /etc/netstart'
+alias reboot='doas reboot'
+alias poweroff='doas halt -p'
+alias diskstat='systat iostat'
+alias shred='rm -P'
+
+pkg() {
+	flag="$1"
+	shift
+	case $flag in
+	a)
+		doas pkg_add "$@" ;;
+	u)
+		doas pkg_add -Uu "$@" ;;
+	s)
+		pkg_info -Q "$@" ;;
+	d)
+		doas pkg_delete "$@" ;
+		doas pkg_delete -a ;;
+	l)
+		pkg_info "$@"
+	esac
+}

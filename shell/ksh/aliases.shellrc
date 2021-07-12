@@ -1,0 +1,60 @@
+# Simplify application commands
+# -----------------------------
+alias dc='docker compose'
+alias disks='geom disk list'
+alias vim=nvim
+alias svim=sudoedit
+alias w3m='w3m https://lite.duckduckgo.com'
+alias tmux='tmux -f ${XDG_CONFIG_HOME}/tmux/tmux.conf'
+
+# Aliases to simplify the ls command
+# ----------------------------------
+alias l=ls
+alias la='l -a'
+alias ll='l -l'
+alias lla='l -la'
+
+# Aliases to move up the hierarchy
+# --------------------------------
+alias ..='cd ..'
+alias ...='..;..'
+alias ....='..;..;..'
+
+# Aliases to simplify unix commands
+# ---------------------------------
+alias cp='cp -iv'
+alias {cl,clr,claer,clear}='clear'
+alias cxa='chmod +x'
+alias cxr='chmod -x'
+alias fcg='fc-list | grep'
+alias {mkd,mkdr,mkidr}=mkdir
+alias mv='mv -iv'
+alias openvpn='sudo openvpn'
+alias p='ping'
+alias pk='pkill'
+alias {psg,psgrep}='ps aux | grep'
+alias {q,qq,quit}=exit
+alias tf='tail -f'
+alias w=which
+
+# Aliases to cd into important / often used directories
+# -----------------------------------------------------
+alias gcf='_g $XDG_CONFIG_HOME'
+alias gch='_g $XDG_CACHE_HOME'
+alias gd='_g $XDG_DOCUMENTS_DIR'
+alias gdo='_g $XDG_DOWNLOAD_DIR'
+alias getc='_g /etc'
+alias gf='_g $XDG_FILES_DIR'
+alias gfb='_g $XDG_FILES_DIR/bin'
+alias gfc='_g $XDG_FILES_DIR/code'
+alias gfd='_g $XDG_FILES_DIR/dots'
+alias gfs='_g $XDG_FILES_DIR/src'
+alias gfss='_g $XDG_FILES_DIR/src/suckless'
+alias gi='_g $XDG_PICTURES_PATH'
+alias gmnt='_g /mnt'
+alias gmu='_g $XDG_MUSIC_PATH'
+alias gtmp='_g /tmp'
+alias gvi='_g $XDG_VIDEO_DIR'
+alias gvar='_g /var'
+alias gw='_g $XDG_PICTURES_PATH/wallpapers'
+

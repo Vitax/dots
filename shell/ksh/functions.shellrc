@@ -1,0 +1,63 @@
+# Helper function to cd into and list contents of directories
+# -----------------------------------------------------------
+_g() {
+	_a=$1 ;
+	shift ;
+	cd $_a/"$*" ;
+	ls ;
+}
+
+c() {
+	if [ -z "$1" ] ; then
+		clear
+	elif [ -d "$1" ] ; then
+		cd "$1"
+	else
+		cat "$1" || cd "$1"
+	fi
+}
+
+# Functions to easily move files into important / often used directories
+# ----------------------------------------------------------------------
+mcf() { mv "$@" $XDG_CONFIG_HOME ; }
+mch() { mv "$@" $XDG_CACHE_HOME ; }
+md() { mv "$@" $XDG_DOCUMENTS_DIR ; }
+mdo() { mv "$@" $XDG_DOWNLOAD_DIR ; }
+metc() { mv "$@" /etc ; }
+mf() { mv "$@" $XDG_FILES_DIR ; }
+mfb() { mv "$@" $XDG_FILES_DIR/bin ; }
+mfc() { mv "$@" $XDG_FILES_DIR/code ; }
+mfd() { mv "$@" $XDG_FILES_DIR/dots ; }
+mfs() { mv "$@" $XDG_FILES_DIR/suckless ; }
+mi() { mv "$@" $XDG_PICTURES_PATH ; }
+mmnt() { mv "$@" /mnt ; }
+mmu() { mv "$@" $XDG_MUSIC_PATH ; }
+mtmp() { mv "$@" /tmp ; }
+mvar() { mv "$@" /var ; }
+mvi() { mv "$@" $XDG_VIDEO_DIR ; }
+mw() { mv "$@" $XDG_PICTURES_PATH/wallpapers ; }
+
+# Functions to easily copy files into important / often used directories
+# ----------------------------------------------------------------------
+ycf() { cp "$@" $XDG_CONFIG_HOME ; }
+ych() { cp "$@" $XDG_CACHE_HOME ; }
+yd() { cp "$@" $XDG_DOCUMENTS_DIR ; }
+ydo() { cp "$@" $XDG_DOWNLOAD_DIR ; }
+yetc() { cp "$@" /etc ; }
+yf() { cp "$@" $XDG_FILES_DIR ; }
+yfb() { cp "$@" $XDG_FILES_DIR/bin ; }
+yfc() { cp "$@" $XDG_FILES_DIR/code ; }
+yfd() { cp "$@" $XDG_FILES_DIR/dots ; }
+yfs() { cp "$@" $XDG_FILES_DIR/suckless ; }
+yi() { cp "$@" $XDG_PICTURES_PATH ; }
+ymmnt() { cp "$@" /mnt ; }
+ymu() { cp "$@" $XDG_MUSIC_PATH ; }
+ytmp() { cp "$@" /tmp ; }
+yvar() { cp "$@" /var ; }
+yvi() { cp "$@" $XDG_VIDEO_DIR ; }
+yw() { cp "$@" $XDG_PICTURES_PATH/wallpapers ; }
+
+# Helper function to easily recompile suckless tools
+# --------------------------------------------------
+rcp() { $XDG_FILES_DIR/src/suckless/build "$@" ; }
+
