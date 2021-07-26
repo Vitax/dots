@@ -9,6 +9,8 @@ function! s:denite_settings() abort
   \ denite#do_map('do_action', 'preview')
   nnoremap <silent><buffer><expr> q
   \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> <C-c>
+  \ denite#do_map('quit')
   nnoremap <silent><buffer><expr> i
   \ denite#do_map('open_filter_buffer')
   nnoremap <silent><buffer><expr> <Space>
@@ -16,5 +18,5 @@ function! s:denite_settings() abort
 endfunction
 
 nnoremap <C-p> :Denite file/rec <CR>
-nnoremap <C-k>b :Denite buffer <CR>
+nnoremap <C-x>b :Denite buffer <CR>
 

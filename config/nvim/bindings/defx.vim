@@ -1,5 +1,5 @@
 nnoremap <silent><C-m>f :Defx `escape(expand('%:p:h'), ' :')` -search=`expand('%:p')`<CR>
-nnoremap <silent><M-n> :Defx<CR>
+nnoremap <silent><C-k>n :Defx<CR>
 
 autocmd FileType defx setlocal nobuflisted
 autocmd FileType defx call s:defx_settings()

@@ -2,19 +2,23 @@
 call plug#begin()
     "" Colorschemes
     Plug 'NLKNguyen/papercolor-theme'
-    Plug 'morhetz/gruvbox'
+    Plug 'joshdick/onedark.vim'
     Plug 'vim-airline/vim-airline-themes'
+
+    "" Misc
+    Plug 'lilydjwg/colorizer'
 
     "" Utility
     Plug 'vim-airline/vim-airline'
-    Plug 'Shougo/denite.nvim', { 'do' : 'UpdateRemotePlugins' }
-    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'tpope/vim-commentary'
+    Plug 'Shougo/denite.nvim'
+    Plug 'Shougo/defx.nvim'
 
     "" Programming tools
     Plug 'neoclide/coc.nvim'
     Plug 'HerringtonDarkholme/yats.vim'
     Plug 'tpope/vim-surround'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'tpope/vim-commentary'
 call plug#end()
 
 " Directory path to the vim config.

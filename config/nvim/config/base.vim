@@ -4,15 +4,15 @@ set t_Co=256
 set termguicolors
 
 " Set colorscheme
+" PaperColor theme
 colorscheme PaperColor
-" let g:gruvbox_contrast_dark="soft"
 let g:airline_theme='papercolor'
 
 " Enable plugin indention
 filetype plugin indent on
 
 " Set python host
-let g:python3_host_prog='/usr/sbin/python3'
+let g:python3_host_prog='/usr/local/bin/python3.8'
 
 " Set text encoding
 set encoding=UTF-8
@@ -52,22 +52,24 @@ let g:loaded_netrwPlugin = 1
 set signcolumn=yes
 
 " Appearance
+syntax on
 set linebreak
 set laststatus=2
 set noshowmode
-set number
+set nonumber
 set showcmd
-syntax on
 set textwidth=80
 set wrap
 
 " Tab configuration
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 set smarttab
-
-set softtabstop=4
 set shiftround
 
 let bclose_multiple = 0
+
+" Cleanup tailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
