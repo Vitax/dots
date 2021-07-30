@@ -16,6 +16,6 @@ color14=#3E999F
 color15=#2D2D2C
 
 background=$color0
-foreground=$color15
+foreground=$color7
 
 cursor=$color8
