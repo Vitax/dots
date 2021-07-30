@@ -18,5 +18,5 @@ function! s:denite_settings() abort
 endfunction
 
 nnoremap <C-p> :Denite file/rec <CR>
-nnoremap <C-x>b :Denite buffer <CR>
+nnoremap <C-k>b :Denite buffer <CR>
 

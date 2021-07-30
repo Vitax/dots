@@ -3,13 +3,12 @@ call plug#begin()
     "" Colorschemes
     Plug 'NLKNguyen/papercolor-theme'
     Plug 'joshdick/onedark.vim'
-    Plug 'vim-airline/vim-airline-themes'
 
     "" Misc
     Plug 'lilydjwg/colorizer'
+    Plug 'hoob3rt/lualine.nvim'
 
     "" Utility
-    Plug 'vim-airline/vim-airline'
     Plug 'Shougo/denite.nvim'
     Plug 'Shougo/defx.nvim'
 

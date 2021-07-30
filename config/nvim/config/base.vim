@@ -6,7 +6,6 @@ set termguicolors
 " Set colorscheme
 " PaperColor theme
 colorscheme PaperColor
-let g:airline_theme='papercolor'
 
 " Enable plugin indention
 filetype plugin indent on
