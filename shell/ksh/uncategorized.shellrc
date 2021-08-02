@@ -3,13 +3,6 @@
 alias weather='curl -s wttr.in/berlin.sd?0'
 alias forecast='curl -s wttr.in/berlin.sd | tail -n 33 | head -n 31'
 
-# Set capslock to change language layout
-# --------------------------------------
-# Linux
-setxkbmap -layout us,de
-setxkbmap -option 'grp:caps_switch'
-setxkbmap -option 'grp_led:caps'
-
 # Override youtube dl
 alias ytdl='youtube-dl -c -R 50 --geo-bypass --prefer-ffmpeg'
 alias ytdlm='youtube-dl -x -c -R 50 --geo-bypass --prefer-ffmpeg'

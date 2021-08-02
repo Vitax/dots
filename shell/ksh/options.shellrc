@@ -3,7 +3,8 @@ case ${0##*/} in
 		set -o csh-history
 		set -o trackall
 		set -o bgnice
-	esac
+    ;;
+esac
 
 set -o vi
 set -o ignoreeof

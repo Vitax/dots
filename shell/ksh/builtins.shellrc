@@ -1,5 +1,5 @@
 # fuzzy finding cd
-cd() { 
+cd() {
     case $1 in
         \?)
             if [ -f "${XDG_CACHE_HOME:-${HOME}/.cache}"/last_dir ] ; then
@@ -21,7 +21,7 @@ cd() {
                 for _i in 1 2 3 4 ; do
                     _cddir="$(find . -type d -maxdepth $_i -iname "*$1*" | head -n 1)"
                     if [ "$_cddir" ] ; then
-                        builtin cd -- "$_cddir"
+                        builtin cd -- "$_cddir" ;
                         break
                     fi
                 done

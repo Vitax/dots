@@ -1,20 +1,19 @@
-# Helper function to cd into and list contents of directories
-# -----------------------------------------------------------
 _g() {
-	_a=$1 ;
-	shift ;
-	cd $_a/"$*" ;
-	ls ;
+    _a="$1" ;
+    shift ;
+    cd $_a/"$*" ;
 }
 
+# Helper function to cd into and list contents of directories
+# -----------------------------------------------------------
 c() {
-	if [ -z "$1" ] ; then
-		clear
-	elif [ -d "$1" ] ; then
-		cd "$1"
-	else
-		cat "$1" || cd "$1"
-	fi
+    if [ -z "$1" ] ; then
+        clear;
+    elif [ -d "$1" ] ; then
+        cd "$1";
+    else
+        cat "$1" || cd "$1";
+    fi
 }
 
 # Functions to easily move files into important / often used directories
