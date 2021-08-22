@@ -1,29 +1,32 @@
-" SetUp plugins
+"" SetUp plugins
 call plug#begin()
     "" Colorschemes
     Plug 'NLKNguyen/papercolor-theme'
-    Plug 'joshdick/onedark.vim'
+    Plug 'morhetz/gruvbox'
 
     "" Misc
+    Plug 'itchyny/lightline.vim'
     Plug 'lilydjwg/colorizer'
-    Plug 'hoob3rt/lualine.nvim'
-
-    "" Utility
-    Plug 'Shougo/denite.nvim'
     Plug 'Shougo/defx.nvim'
+    Plug 'kristijanhusak/defx-icons'
 
-    "" Programming tools
-    Plug 'neoclide/coc.nvim'
+    "" Utils
+    Plug 'Shougo/denite.nvim'
+    Plug 'easymotion/vim-easymotion'
+
+    "" Programming utils
     Plug 'HerringtonDarkholme/yats.vim'
     Plug 'tpope/vim-surround'
-    Plug 'easymotion/vim-easymotion'
     Plug 'tpope/vim-commentary'
+
+    "" Programming cli
+    Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
-" Directory path to the vim config.
+"" Directory path to the vim config.
 let s:path = fnamemodify(expand('$MYVIMRC'), ':h')
 
-" Glob and source all the files in `path`
+"" Glob and source all the files in `path`
 function! SourceAllIn(path)
     for s:fpath in split(globpath(s:path . a:path, '*.vim'), '\n')
         exe 'source' s:fpath

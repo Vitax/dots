@@ -7,6 +7,8 @@ function! s:denite_settings() abort
   \ denite#do_map('do_action', 'delete')
   nnoremap <silent><buffer><expr> p
   \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> <C-c>
+  \ denite#do_map('quit')
   nnoremap <silent><buffer><expr> q
   \ denite#do_map('quit')
   nnoremap <silent><buffer><expr> <C-c>
@@ -17,6 +19,6 @@ function! s:denite_settings() abort
   \ denite#do_map('toggle_select').'j'
 endfunction
 
-nnoremap <C-p> :Denite file/rec <CR>
-nnoremap <C-k>b :Denite buffer <CR>
+nnoremap <silent><C-p> :Denite file/rec -start-filter <CR>
+nnoremap <silent><leader>b :Denite buffer <CR>
 

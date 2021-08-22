@@ -1,5 +1,6 @@
 nnoremap <silent><C-m>f :Defx `escape(expand('%:p:h'), ' :')` -search=`expand('%:p')`<CR>
-nnoremap <silent><C-k>n :Defx<CR>
+nnoremap <silent><C-k>n :Defx <CR>
+nnoremap <C-x>d :Defx<space>
 
 autocmd FileType defx setlocal nobuflisted
 autocmd FileType defx call s:defx_settings()
@@ -28,9 +29,6 @@ function! s:defx_settings() abort
     \ defx#do_action('new_file')
     nnoremap <silent><buffer><expr> M
     \ defx#do_action('new_multiple_files')
-    nnoremap <silent><buffer><expr> C
-    \ defx#do_action('toggle_columns',
-    \   'mark:indent:icon:filename:type:size:time')
     nnoremap <silent><buffer><expr> S
     \ defx#do_action('toggle_sort', 'time')
     nnoremap <silent><buffer><expr> d
@@ -63,6 +61,4 @@ function! s:defx_settings() abort
     \ defx#do_action('redraw')
     nnoremap <silent><buffer><expr> <C-g>
     \ defx#do_action('print')
-    nnoremap <silent><buffer><expr> cd
-    \ defx#do_action('change_vim_cwd')
 endfunction
