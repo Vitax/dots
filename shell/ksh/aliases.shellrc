@@ -3,6 +3,7 @@
 alias dc='docker compose'
 alias disks='geom disk list'
 alias vim=nvim
+alias tmacs='emacs -nw'
 alias svim=sudoedit
 alias w3m='w3m https://lite.duckduckgo.com'
 alias tmux='tmux -f ${XDG_CONFIG_HOME}/tmux/tmux.conf'

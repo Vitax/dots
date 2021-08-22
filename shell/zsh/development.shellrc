@@ -1,0 +1,38 @@
+## development
+alias mk="make -j${NPROC:-1}"
+alias mkc='make clean'
+alias mki='make install'
+alias mku='make uninstall'
+alias mks='make -s install'
+alias rustup='curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh'
+
+
+# quick recompile
+rcp() {
+    case $1 in
+        st|dwm|dmenu|surf|tabbed|sent)
+            cd "${XDG_FILES_DIR}"/src/suckless
+            sh ./build "$@"
+            cd - >/dev/null
+            ;;
+        dwmblocks)
+            cd "${XDG_FILES_DIR}"/src/dwmblocks
+            sh ./build "$@"
+            cd - >/dev/null
+            ;;
+        *)
+           printf '%s\n' "No build process found"
+    esac
+}
+
+## docker shortcuts
+alias sdc="sudo docker-compose"
+
+## launch tmux with config
+alias tmux="tmux -f ${XDG_CONFIG_HOME}/tmux/tmux.conf"
+
+## rebind applications
+alias vim="nvim"
+
+## create aliases for commonly used remote desktop session
+alias rdp_work="xfreerdp /d:test.local /u:adminCaglar /v:192.168.1.100 /dynamic-resolution"

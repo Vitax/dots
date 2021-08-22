@@ -1,0 +1,23 @@
+autoload -Uz add-zsh-hook
+autoload -Uz compinit 
+autoload -Uz colors 
+autoload -Uz promptinit 
+
+compinit 
+colors
+promptinit
+
+# Set up the prompt (with git branch name)
+setopt PROMPT_SUBST
+
+bindkey -v
+
+if [ $PS1_GIT = true ]; then
+    autoload -Uz vcs_info
+
+    # Format the vcs_info_msg_0_ variable
+    zstyle ':vcs_info:git:*' formats '[%B %F{blue}%b %F{reset}]'
+    zstyle ':completion:*' menu select
+fi
+
+export KEYTIMEOUT=1

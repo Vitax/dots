@@ -1,0 +1,12 @@
+## save hist file per shell, deleting on close
+if [ ${HISTORY_STYLE} = "per-shell" ]; then
+    export HISTFILE=~/.cache/.shell_history-$$ \
+           HISTCONTROL=ignoredups:ignorespace \
+           HISTSIZE=3000
+
+    trap '/bin/rm "$HISTFILE" 2>/dev/null' EXIT TERM KILL QUIT
+else
+    HISTFILE=~/.cache/zsh_histfile
+    HISTSIZE=10000
+    SAVEHIST=10000
+fi

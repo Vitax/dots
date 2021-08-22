@@ -1,0 +1,21 @@
+## directory of shell configs
+SHELLRC_DIR=${XDG_FILES_DIR}/dots/shell/zsh
+
+## internal variables
+HISTORY_STYLE=default # [default/per-shell]
+PS1_STYLE=user-pwd    # [user-pwd-date/user/pwd/date]
+PS1_GIT=true          # [true/false]
+
+. ${SHELLRC_DIR}/options.shellrc
+. ${SHELLRC_DIR}/clipboard.shellrc
+. ${SHELLRC_DIR}/prompt.shellrc
+. ${SHELLRC_DIR}/development.shellrc
+. ${SHELLRC_DIR}/history.shellrc
+. ${SHELLRC_DIR}/aliases.shellrc
+. ${SHELLRC_DIR}/functions.shellrc
+. ${SHELLRC_DIR}/git.shellrc
+. ${SHELLRC_DIR}/movement.shellrc
+. ${SHELLRC_DIR}/packagemanager.shellrc
+. ${SHELLRC_DIR}/networking.shellrc
+. ${SHELLRC_DIR}/templates.shellrc
+. ${SHELLRC_DIR}/uncatogorized.shellrc

@@ -1,0 +1,36 @@
+## networking
+alias scp='scp -rp'
+
+alias traffic='netstat -w 1 -b'
+alias dumpall="sudo tcpdump -n -i wlp5s0"
+alias dumpweb="sudo tcpdump -n -i wlp5s0 port 80 or port 443 or port 53"
+alias dumphttp="sudo tcpdump -n -i wlp5s0 port 80 or port 443"
+alias dumpdns="sudo tcpdump -n -i wlp5s0 port 53"
+alias dumpssh="sudo tcpdump -n -i wlp5s0 port 22"
+
+ping() { command ping -L -n -s 1 -w 2 "${1:-eff.org}" ; }
+pingpi() { ping $(grep -A 1 'Host pi' ~/.ssh/config | grep -oE '[0-9]+.*') ; }
+alias p=ping
+alias p8='ping 8.8.8.8'
+alias cv='curl -v'
+alias cvip='curl -v wtfismyip.com/text'
+
+w3m() {
+    command w3m -F -s -graph -no-mouse \
+        "${@:-https://duckduckgo.com/lite}"
+}
+wddg() {
+    w3m https://duckduckgo.com/lite/?q="$*" ;
+}
+alias wdump='w3m -dump'
+
+# nicely format http://wtfismyip.com output
+wtf() {
+    w3m -dump https://wtfismyip.com | head -n 15 | \
+    while read -r line ; do
+        case $line in
+            *:*|'') ;;
+            *) printf '%s\n' "$line"
+        esac
+    done
+}

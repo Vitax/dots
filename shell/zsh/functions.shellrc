@@ -1,0 +1,50 @@
+## dynamic 'c' utility
+c() { 
+    if [ -z "$1" ] ; then
+        clear
+    elif [ -d "$1" ] ; then
+        cd "$1"
+    else
+        cat "$1" || cd "$1"
+    fi
+}
+
+## ls
+case "$TERM" in
+        dumb)
+            alias ls='ls -F'
+            export NO_COLOR=true
+            ;;
+       *)
+           if type exa >/dev/null ; then
+               alias ls='exa -F --group-directories-first'
+               alias {lt,tree}='exa -F -T'
+           else
+               alias ls='ls -F'
+           fi
+esac
+
+mkcd() { mkd "$_" && cd "$_" ; }
+mvcd() { mv "$1" "$2" && cd "$2" ; }
+cpcd() { cp "$1" "$2" && cd "$2" ; }
+
+## dump contents of a file in $PATH
+cw() { cat "$(which "${1:-?}")" ; }
+
+## search for running process
+psg() { ps aux | grep -i "$*" | grep -v "grep $*" ; }
+
+## search for a font name
+fcg() { fc-list | sed 's|.*: ||g' | grep -i "$*" ; }
+
+# Use vim cli mode
+bindkey '^P' up-history
+bindkey '^N' down-history
+
+# backspace and ^h working even after
+# returning from command mode
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+
+# ctrl-w removed word backwards
+bindkey '^w' backward-kill-word

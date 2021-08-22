@@ -1,0 +1,45 @@
+precmd() {
+    if [ $PS1_GIT = true ]; then
+        vcs_info
+    fi
+}
+
+setzshuser() {
+    printf '%s' "# %B%F{cyan}%n% ${rc} @ %B%F{cyan}%m %b%F{reset}"
+}
+
+setzshpwd() {
+    printf '%s' "%B%F{yellow}%~ % %b%F{reset}"
+}
+
+setzshgit() {
+    printf '%s' "\$vcs_info_msg_0_ %b%F{reset}"
+}
+
+# add space after calculating the prompt
+setprompt() {
+    local rc=$reset_color
+    local _user=""
+    local _pwd=""
+    local _git=""
+
+    if [ grep -o "zsh"<<<$SHELL ] ; then
+        if [ $PS1_GIT = true ]; then
+            _git=$(setzshgit)
+        fi
+
+        if [ $PS1_STYLE = "user-pwd" ] ; then
+            _user=$(setzshuser)
+            _pwd=$(setzshpwd)
+        elif [$PS1_STYLE = "user" ]; then
+            _user=$setzshuser
+        elif [$PS1_STYLE = "pwd" ]; then
+            _pwd=$setzshpwd
+        fi
+
+        PROMPT="$_user""$_pwd""$_git"$'\n%B%F{red}$ %b%F{reset}'
+    elif [ grep -o "ksh"<<<$SHELL ] ;then
+    fi
+}
+
+add-zsh-hook precmd setprompt

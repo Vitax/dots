@@ -20,25 +20,6 @@ func main() {
 EOF
 }
 
-hellocpp() {
-cat >"${1:-hello.cpp}"<<"EOF"
-/*
- *
- * http://github.com/vitax
- *
- * [automatically generated template text]
- * 
- */
-
-#include <iostream>
-
-int main() {
-    printf("%s\n", "hi");
-    return 0;
-}
-EOF
-}
-
 helloc() {
 cat >"${1:-hello.c}"<<"EOF"
 /*

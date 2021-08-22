@@ -1,0 +1,17 @@
+
+# weather
+alias weather='curl -s wttr.in/berlin,sd?0'
+alias forecast='curl -s wttr.in/berlin,sd | tail -n 33 | head -n 31'
+
+## pf logging
+alias pfdump='sudo tcpdump -n -e -ttt -r /var/log/pflog' # dump all to stdout
+alias pfdrop='sudo tcpdump -nettti pflog0 action drop'   # follow dropped
+
+## unsorted junk below
+cheat() {
+    curl -s cheat.sh/$1 ;
+}
+
+## youtube dl aliases
+alias ytdl="youtube-dl -c -R 50 --geo-bypass --prefer-ffmpeg"
+alias ytdlm="youtube-dl -x -c -R 50 --geo-bypass --prefer-ffmpeg"

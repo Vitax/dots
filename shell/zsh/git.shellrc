@@ -1,0 +1,27 @@
+## git aliases
+alias ga="git add"
+alias gaa="git add --all"
+
+alias gst="git status"
+
+alias gc="git commit -v"
+alias gca="git commit -v --amend"
+alias gcm="git commit -v -m"
+
+alias gco="git checkout"
+alias gcb="git checkout -b"
+
+alias gf="git fetch --all"
+
+alias ggpull="git pull origin HEAD"
+alias ggpush="git push origin HEAD"
+
+alias gwipe="git fetch origin -p && git branch -vv | grep gone | grep -Eo '^  [^ ]+' | xargs -n 1 git branch -D"
+
+## gitignore
+gi_cmd() {
+    curl -sL https://www.gitignore.io/api/$1 ;
+}
+
+alias gi=gi_cmd
+
