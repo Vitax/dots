@@ -48,7 +48,7 @@ base.bindings = {
     bufferline = {
         new_buffer = "<S-t>",
         newtab = "<C-t>b",
-        close = "<leader>Q",
+        close = "<leader>q",
         cycleNext = "tk",
         cyclePrev = "tj",
     },
@@ -62,9 +62,9 @@ base.bindings = {
         git_blame = "<leader>gb",
     },
     misc = {
+        alternative_command = ";",
         save_file = "<leader>w",
-        close_buffer = "<leader>q",
-        esc_termmode = "jk",
+        close_buffer = "td",
         hide_hls = "<leader><leader>",
         toggle_linenr = "<leader>n",
         theme_toggle = "<leader>tt",
@@ -88,15 +88,14 @@ base.bindings = {
         buffers = "<leader>fb",
         help_tags = "<leader>fh",
         oldfiles = "<leader>fo",
-        themes = "<leader>th",
     },
-    terms = {
-        esc_termmode = "jk",
-        esc_hide_termmode = "JK",
-        pick_term = "<leader>W",
-        new_wind = "<leader>w",
-        new_vert = "<leader>v",
-        new_hori = "<leader>h",
+    terminal = {
+        esc_termmode = "<C-x><C-c>",
+        esc_hide_termmode = "<C-x><C-q>",
+        pick_term = "<C-x>t",
+        new_window = "<C-x>nt",
+        new_vertical = "<C-x>vt",
+        new_horizontal = "<C-x>ht",
     },
 }
 

@@ -1,9 +1,10 @@
 local present, true_zen = pcall(require, "true-zen")
-local plugin_status = require("utils").load_config().plugin_status
 
 if not present then
    return
 end
+
+local plugin_status = require("main.utils").load_config().plugin_status
 
 true_zen.setup {
    ui = {

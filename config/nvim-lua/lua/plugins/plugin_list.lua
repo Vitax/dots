@@ -1,6 +1,4 @@
-local plugin_status = require("utils").load_config().plugin_status
-
-local present, _ = pcall(require, "packer_init")
+local present, _ = pcall(require, "plugins.packer_init")
 local packer
 
 if present then
@@ -10,6 +8,7 @@ else
 end
 
 local use = packer.use
+local plugin_status = require("main.utils").load_config().plugin_status
 
 return packer.startup(function()
     use {
@@ -22,7 +21,7 @@ return packer.startup(function()
         disable = not plugin_status.galaxyline,
         after = "nvim-web-devicons",
         config = function()
-            require("plugins.galaxyline")
+            require("plugins.configs.galaxyline")
         end,
     }
 
@@ -30,10 +29,10 @@ return packer.startup(function()
         "akinsho/bufferline.nvim",
         disable = not plugin_status.nvim_bufferline,
         config = function()
-            require("plugins.bufferline")
+            require("plugins.configs.bufferline")
         end,
         setup = function()
-            require("bindings").bufferline()
+            require("main.bindings").bufferline()
         end,
     }
 
@@ -49,7 +48,7 @@ return packer.startup(function()
         disable = not plugin_status.nvim_colorizer,
         event = "BufRead",
         config = function()
-            require("plugins.others").colorizer()
+            require("plugins.configs.others").colorizer()
         end,
     }
 
@@ -58,7 +57,7 @@ return packer.startup(function()
         "nvim-treesitter/nvim-treesitter",
         event = "BufRead",
         config = function()
-            require("plugins.treesitter")
+            require("plugins.configs.treesitter")
         end,
     }
 
@@ -71,7 +70,7 @@ return packer.startup(function()
         "neovim/nvim-lspconfig",
         after = "nvim-lspinstall",
         config = function()
-            require("plugins.lspconfig")
+            require("plugins.configs.lspconfig")
         end,
     }
 
@@ -80,7 +79,7 @@ return packer.startup(function()
         disable = not plugin_status.lspkind,
         event = "BufEnter",
         config = function()
-            require("plugins.others").lspkind()
+            require("plugins.configs.others").lspkind()
         end,
     }
 
@@ -89,7 +88,7 @@ return packer.startup(function()
         disable = not plugin_status.lspsignature,
         after = "nvim-lspconfig",
         config = function()
-            require("plugins.others").signature()
+            require("plugins.configs.others").signature()
         end,
     }
 
@@ -98,7 +97,7 @@ return packer.startup(function()
         "hrsh7th/nvim-compe",
         event = "InsertEnter",
         config = function()
-            require("plugins.compe")
+            require("plugins.configs.compe")
         end,
         wants = "LuaSnip",
         requires = {
@@ -107,7 +106,7 @@ return packer.startup(function()
                 wants = "friendly-snippets",
                 event = "InsertCharPre",
                 config = function()
-                    require("plugins.luasnip")
+                    require("plugins.configs.luasnip")
                 end,
             },
             {
@@ -122,7 +121,7 @@ return packer.startup(function()
         disable = not plugin_status.neoformat,
         cmd = "Neoformat",
         setup = function()
-            require("bindings").neoformat()
+            require("main.bindings").neoformat()
         end,
     }
 
@@ -131,17 +130,17 @@ return packer.startup(function()
         "kyazdani42/nvim-tree.lua",
         cmd = "NvimTreeToggle",
         config = function()
-            require("plugins.nvimtree")
+            require("plugins.configs.nvimtree")
         end,
         setup = function()
-            require("bindings").nvimtree()
+            require("main.bindings").nvimtree()
         end,
     }
 
     use {
         "kyazdani42/nvim-web-devicons",
         config = function()
-            require("plugins.icons")
+            require("plugins.configs.icons")
         end,
     }
 
@@ -160,19 +159,19 @@ return packer.startup(function()
             },
         },
         config = function()
-            require("plugins.telescope")
+            require("plugins.configs.telescope")
         end,
         setup = function()
-            require("bindings").telescope()
+            require("main.bindings").telescope()
         end,
     }
 
-    -- misc plugins
+    -- misc plugins.configs
     use {
         "windwp/nvim-autopairs",
         after = "nvim-compe",
         config = function()
-            require("plugins.autopairs")
+            require("plugins.configs.autopairs")
         end,
     }
 
@@ -187,10 +186,10 @@ return packer.startup(function()
         disable = not plugin_status.nvim_comment,
         cmd = "CommentToggle",
         config = function()
-            require("plugins.others").comment()
+            require("plugins.configs.others").comment()
         end,
         setup = function()
-            require("bindings").comment_nvim()
+            require("main.bindings").comment_nvim()
         end,
     }
 
@@ -203,10 +202,10 @@ return packer.startup(function()
             "TZFocus",
         },
         config = function()
-            require("plugins.truezen")
+            require("plugins.configs.truezen")
         end,
         setup = function()
-            require("bindings").truezen()
+            require("main.bindings").truezen()
         end,
     }
 
@@ -215,7 +214,7 @@ return packer.startup(function()
         disable = not plugin_status.blankline,
         event = "BufRead",
         setup = function()
-            require("plugins.others").blankline()
+            require("plugins.configs.others").blankline()
         end,
     }
 
@@ -226,7 +225,7 @@ return packer.startup(function()
             "Git",
         },
         setup = function()
-            require("bindings").fugitive()
+            require("main.bindings").fugitive()
         end,
     }
 end)

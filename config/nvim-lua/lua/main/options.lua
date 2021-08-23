@@ -1,7 +1,7 @@
 local opt = vim.opt
 local g = vim.g
 
-local config = require("utils").load_config()
+local config = require("main.utils").load_config()
 
 local options = config.options
 local ui = config.ui
@@ -69,7 +69,3 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
    g["loaded_" .. plugin] = 1
 end
-
-vim.cmd [[ au TermOpen term://* setlocal nonumber norelativenumber | setfiletype terminal ]]
-
-vim.cmd [[ autocmd BufEnter,BufWinEnter,WinEnter,CmdwinEnter,TermEnter * lua require("utils").hide_statusline() ]]

@@ -61,7 +61,7 @@ if not present or not present2 then
     return
 end
 
-local user_statusline_style = require("utils").load_config().ui.statusline.style
+local user_statusline_style = require("main.utils").load_config().ui.statusline.style
 local statusline_style = icon_styles[user_statusline_style]
 
 galaxyline.section.left[1] = {

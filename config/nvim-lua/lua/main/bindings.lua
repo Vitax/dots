@@ -1,10 +1,10 @@
-local cfg_bindings = require("utils").load_config().bindings
+local cfg_bindings = require("main.utils").load_config().bindings
 local misc_map = cfg_bindings.misc
+local term_maps = cfg_bindings.terminal
 
 local cmd = vim.cmd
 
 -- region helpers
-
 local function map(mode, lhs, rhs, opts)
     local options = { noremap = true, silent = true }
 
@@ -14,7 +14,6 @@ local function map(mode, lhs, rhs, opts)
 
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
-
 -- endregion helpers
 
 
@@ -26,12 +25,20 @@ function bindings.misc()
     map("", misc_map.save_file, ":w <CR>", opt)
     map("", misc_map.hide_hls, ":nohls <CR>", opt)
 
+    -- region terminal mappings
+    map("t", term_maps.esc_termmode, "<C-\\><C-n>", opt)
+    map("t", term_maps.esc_hide_termmode, "<C-\\><C-n> :lua require('main.utils').close_buffer() <CR>", opt)
+    map("n", term_maps.pick_term, ":Telescope terms <CR>", opt)
+    map( "n", term_maps.new_horizontal, ":execute 15 .. 'new +terminal' | let b:term_type = 'hori' | startinsert <CR>", opt)
+    map("n", term_maps.new_vertical, ":execute 'vnew +terminal' | let b:term_type = 'vert' | startinsert <CR>", opt)
+    map("n", term_maps.new_window, ":execute 'terminal' | let b:term_type = 'wind' | startinsert <CR>", opt)
+    -- endregion terminal mappings
 
-    cmd "silent! command PackerCompile lua require 'plugin_list' require('packer').compile()"
-    cmd "silent! command PackerInstall lua require 'plugin_list' require('packer').install()"
-    cmd "silent! command PackerStatus lua require 'plugin_list' require('packer').status()"
-    cmd "silent! command PackerSync lua require 'plugin_list' require('packer').sync()"
-    cmd "silent! command PackerUpdate lua require 'plugin_list' require('packer').update()"
+    cmd "silent! command PackerCompile lua require 'plugins.plugin_list' require('packer').compile()"
+    cmd "silent! command PackerInstall lua require 'plugins.plugin_list' require('packer').install()"
+    cmd "silent! command PackerStatus lua require 'plugins.plugin_list' require('packer').status()"
+    cmd "silent! command PackerSync lua require 'plugins.plugin_list' require('packer').sync()"
+    cmd "silent! command PackerUpdate lua require 'plugins.plugin_list' require('packer').update()"
 end
 
 -- region plugin_bindings
@@ -40,7 +47,7 @@ function bindings.bufferline()
 
     map("n", m.new_buffer, ":enew<CR>", opt) -- new buffer
     map("n", m.newtab, ":tabnew<CR>", opt) -- new tab
-    map("n", m.close, ":lua require('utils').close_buffer() <CR>", opt) 
+    map("n", m.close, ":lua require('main.utils').close_buffer() <CR>", opt) 
 
     map("n", m.cycleNext, ":BufferLineCycleNext<CR>", opt)
     map("n", m.cyclePrev, ":BufferLineCyclePrev<CR>", opt)
