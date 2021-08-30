@@ -6,14 +6,18 @@ local config = require("main.utils").load_config()
 local options = config.options
 local ui = config.ui
 
+opt.shortmess:append "sI"
+opt.whichwrap:append "<>hl"
+
 -- color scheme
 opt.termguicolors = true
 opt.background = ui.background
 g.colors_name = ui.theme
 
-opt.completeopt = { "menuone", "noselect" }
 opt.undofile = options.permanent_undo
+opt.fillchars = { eob = " " }
 
+opt.cul = true
 opt.ruler = options.ruler
 opt.hidden = options.hidden
 opt.ignorecase = options.ignorecase
@@ -31,16 +35,12 @@ opt.updatetime = options.updatetime
 opt.timeoutlen = options.timeoutlen
 opt.clipboard = options.clipboard
 
-opt.shortmess:append "sI"
-
 opt.number = options.number
 opt.numberwidth = options.numberwidth
 opt.relativenumber = options.relativenumber
 opt.expandtab = options.expandtab
 opt.shiftwidth = options.shiftwidth
 opt.smartindent = options.smartindent
-
-opt.whichwrap:append "<>hl"
 
 g.mapleader = options.mapleader
 g.auto_save = options.autosave

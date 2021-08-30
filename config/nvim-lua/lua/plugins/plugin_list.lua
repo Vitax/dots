@@ -17,11 +17,11 @@ return packer.startup(function()
     }
 
     use {
-        "glepnir/galaxyline.nvim",
-        disable = not plugin_status.galaxyline,
+        "hoob3rt/lualine.nvim",
+        disable = not plugin_status.statusline,
         after = "nvim-web-devicons",
         config = function()
-            require("plugins.configs.galaxyline")
+            require("plugins.configs.statusline")
         end,
     }
 
@@ -39,10 +39,12 @@ return packer.startup(function()
     -- color related stuff
     use {
         "NLKNguyen/papercolor-theme",
-        cmd = {
-            "Git",
-        },
     }
+
+    use {
+        "rakr/vim-one",
+    }
+
     use {
         "norcalli/nvim-colorizer.lua",
         disable = not plugin_status.nvim_colorizer,
@@ -94,26 +96,25 @@ return packer.startup(function()
 
     -- load compe in insert mode only
     use {
-        "hrsh7th/nvim-compe",
+        "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         config = function()
             require("plugins.configs.compe")
         end,
-        wants = "LuaSnip",
-        requires = {
-            {
-                "L3MON4D3/LuaSnip",
-                wants = "friendly-snippets",
-                event = "InsertCharPre",
-                config = function()
-                    require("plugins.configs.luasnip")
-                end,
-            },
-            {
-                "rafamadriz/friendly-snippets",
-                event = "InsertCharPre",
-            },
-        },
+    }
+
+    use {
+        "L3MON4D3/LuaSnip",
+        event = "InsertCharPre",
+        wants = "friendly-snippets",
+        config = function()
+            require("plugins.configs.others").luasnip()
+        end,
+    }
+
+    use {
+        "rafamadriz/friendly-snippets",
+        event = "InsertCharPre",
     }
 
     use {
@@ -146,12 +147,11 @@ return packer.startup(function()
 
     use {
         "nvim-lua/plenary.nvim",
-        after = "bufferline.nvim",
     }
 
     use {
         "nvim-telescope/telescope.nvim",
-        after = "plenary.nvim",
+        cmd = "Telescope",
         requires = {
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
@@ -168,11 +168,32 @@ return packer.startup(function()
 
     -- misc plugins.configs
     use {
+        "saadparwaiz1/cmp_luasnip",
+        after = "LuaSnip",
+    }
+
+    use {
         "windwp/nvim-autopairs",
-        after = "nvim-compe",
+        after = "nvim-cmp",
         config = function()
             require("plugins.configs.autopairs")
         end,
+    }
+
+    use {
+        "hrsh7th/cmp-nvim-lua",
+        after = "cmp_luasnip",
+    }
+
+
+    use {
+        "hrsh7th/cmp-nvim-lsp",
+        after = "cmp-nvim-lua",
+    }
+
+    use {
+        "hrsh7th/cmp-buffer",
+        after = "cmp-nvim-lsp",
     }
 
     use {
@@ -223,6 +244,11 @@ return packer.startup(function()
         disable = not plugin_status.vim_fugitive,
         cmd = {
             "Git",
+            "Gdiff",
+            "Gdiffsplit",
+            "Gvdiffsplit",
+            "Gwrite",
+            "Gw",
         },
         setup = function()
             require("main.bindings").fugitive()

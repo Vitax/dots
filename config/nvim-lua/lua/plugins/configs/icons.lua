@@ -6,95 +6,95 @@ end
 icons.setup {
    override = {
       html = {
-         icon = "",
+         icon = " ",
          name = "html",
       },
       c = {
-         icon = "",
+         icon = " ",
          name = "c",
       },
       css = {
-         icon = "",
+         icon = " ",
          name = "css",
       },
       js = {
-         icon = "",
+         icon = " ",
          name = "js",
       },
       ts = {
-         icon = "ﯤ",
+         icon = "ﯤ ",
          name = "ts",
       },
       kt = {
-         icon = "󱈙",
+         icon = "󱈙 ",
          name = "kt",
       },
       png = {
-         icon = "",
+         icon = " ",
          name = "png",
       },
       jpg = {
-         icon = "",
+         icon = " ",
          name = "jpg",
       },
       jpeg = {
-         icon = "",
+         icon = " ",
          name = "jpeg",
       },
       mp3 = {
-         icon = "",
+         icon = " ",
          name = "mp3",
       },
       mp4 = {
-         icon = "",
+         icon = " ",
          name = "mp4",
       },
       out = {
-         icon = "",
+         icon = " ",
          name = "out",
       },
       Dockerfile = {
-         icon = "",
+         icon = " ",
          name = "Dockerfile",
       },
       rb = {
-         icon = "",
+         icon = " ",
          name = "rb",
       },
       vue = {
-         icon = "﵂",
+         icon = "﵂ ",
          name = "vue",
       },
       py = {
-         icon = "",
+         icon = " ",
          name = "py",
       },
       toml = {
-         icon = "",
+         icon = " ",
          name = "toml",
       },
       lock = {
-         icon = "",
+         icon = " ",
          name = "lock",
       },
       zip = {
-         icon = "",
+         icon = " ",
          name = "zip",
       },
       xz = {
-         icon = "",
+         icon = " ",
          name = "xz",
       },
       deb = {
-         icon = "",
+         icon = " ",
          name = "deb",
       },
       rpm = {
-         icon = "",
+         icon = " ",
          name = "rpm",
       },
       lua = {
-         icon = "",
+         icon = " ",
          name = "lua",
       },
    },

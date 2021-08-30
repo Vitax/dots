@@ -26,12 +26,12 @@ true_zen.setup {
    },
    modes = {
       ataraxis = {
-         left_padding = 32,
-         right_padding = 32,
-         top_padding = 1,
-         bottom_padding = 1,
+         left_padding = 12,
+         right_padding = 12,
+         top_padding = 4,
+         bottom_padding = 4,
          ideal_writing_area_width = { 0 },
-         auto_padding = true,
+         auto_padding = false,
          keep_default_fold_fillchars = true,
          custome_bg = "",
          bg_configuration = true,
@@ -52,7 +52,7 @@ true_zen.setup {
    },
    integrations = {
       vim_gitgutter = false,
-      galaxyline = plugin_status.galaxyline,
+      statuline = plugin_status.statuline,
       tmux = false,
       gitsigns = false,
       nvim_bufferline = plugin_status.nvim_bufferline,

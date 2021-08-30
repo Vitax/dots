@@ -11,10 +11,16 @@ end
 
 bufferline.setup {
    options = {
-      offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+      offsets = { 
+          {
+              filetype = "NvimTree",
+              text = "",
+              padding = 1 
+          }
+      },
+      close_icon = "",
       buffer_close_icon = "",
       modified_icon = "",
-      close_icon = "",
       left_trunc_marker = "",
       right_trunc_marker = "",
       max_name_length = 14,
@@ -23,7 +29,8 @@ bufferline.setup {
       show_tab_indicators = true,
       enforce_regular_tabs = false,
       view = "multiwindow",
-      show_buffer_close_icons = true,
+      show_buffer_close_icons = false,
+      show_close_icon = false,
       separator_style = "thin",
       always_show_bufferline = true,
       custom_filter = function(buf_number)

@@ -1,4 +1,6 @@
 local present, luasnip = pcall(require, "luasnip")
+local g = vim.g
+
 if not present then
    return
 end
@@ -16,7 +18,7 @@ local check_back_space = function()
    end
 end
 
-_G.tab_complete = function()
+g.tab_complete = function()
    if vim.fn.pumvisible() == 1 then
       return t "<C-n>"
    elseif luasnip and luasnip.expand_or_jumpable() then
@@ -27,7 +29,8 @@ _G.tab_complete = function()
       return vim.fn["compe#complete"]()
    end
 end
-_G.s_tab_complete = function()
+
+g.s_tab_complete = function()
    if vim.fn.pumvisible() == 1 then
       return t "<C-p>"
    elseif luasnip and luasnip.jumpable(-1) then
@@ -37,7 +40,7 @@ _G.s_tab_complete = function()
    end
 end
 
-_G.completions = function()
+g.completions = function()
    local npairs
    if not pcall(function()
       npairs = require "nvim-autopairs"

@@ -2,7 +2,7 @@ local base = {}
 
 base.ui = {
     -- theme options
-    theme = "PaperColor",
+    theme = "one",
     background = "light",
 
     -- font options
@@ -13,6 +13,7 @@ base.ui = {
         hidden = {
             "NvimTree",
             "terminal",
+            "help",
         },
         shown = {},
         style = "round",
@@ -21,7 +22,7 @@ base.ui = {
 
 base.options = {
     auto_save = false,
-    permanent_undo = true,
+    permanent_undo = false,
 
     hidden = true,
     ruler = false,
@@ -49,8 +50,11 @@ base.bindings = {
         new_buffer = "<S-t>",
         newtab = "<C-t>b",
         close = "<leader>q",
-        cycleNext = "tk",
-        cyclePrev = "tj",
+        cycleNext = "tj",
+        cyclePrev = "tk",
+    },
+    neoformat = {
+        format = "<C-k><C-d>"
     },
     comment_nvim = {
         comment_toggle = "<C-k>c",
@@ -62,18 +66,14 @@ base.bindings = {
         git_blame = "<leader>gb",
     },
     misc = {
-        alternative_command = ";",
+        easy_command = ";",
         save_file = "<leader>w",
         close_buffer = "td",
         hide_hls = "<leader><leader>",
         toggle_linenr = "<leader>n",
-        theme_toggle = "<leader>tt",
     },
     nvimtree = {
         treetoggle = "<C-k>n",
-    },
-    neoformat = {
-        format = "<C-k><C-d>",
     },
     truezen = {
         ataraxisMode = "<leader>zz",
@@ -102,7 +102,7 @@ base.bindings = {
 base.plugin_status = {
     -- UI
     nvim_bufferline = true,
-    galaxyline = true,
+    statusline = true,
     nvim_colorizer = true,
     blankline = true,
     truezen_nvim = true,
