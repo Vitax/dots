@@ -1,20 +1,8 @@
 ## Origin: https://raw.githubusercontent.com/mitchweaver/dots/master/shell/package_manager.shellrc
 
 # Crux
-if command -v crux >/dev/null ; then
-    pkg() {
-        flag=${1#-}
-        shift
-        case $flag in
-            a) sudo prt-get depinst -f -im -is -if --install-scripts "$@" ;;
-            u) sudo prt-get update  -f -im -is -if --install-scripts "$@" ;;
-            d) sudo prt-get remove "$@" ;;
-            i) prt-get info "$@" ;;
-            s) prt-get search "$@" ;;
-        esac
-    }
 # Void
-elif command -v xbps-query >/dev/null ; then
+if command -v xbps-query >/dev/null ; then
     pkg() {
         flag=${1#-}
         shift
@@ -46,35 +34,6 @@ elif command -v apt >/dev/null ; then
                 while read -r p ; do
                     sudo apt install --reinstall --fix-broken ${p%%/*}
                 done
-        esac
-    }
-# alpine
-elif command -v setup-alpine >/dev/null ; then
-    pkg() {
-        flag=${1#-}
-        shift
-        case $flag in
-            a) sudo apk add "$@" ;;
-            u) sudo apk upgrade "$@" ;;
-            d) sudo apk del "$@" ;;
-            s) apk search "$@" ;;
-            i) apk info "$@" ;;
-            l) apk list --installed ;;
-            fix-me) sudo apk -sv fix ;;
-        esac
-    }
-# OpenBSD
-elif command -v pkg_add >/dev/null ; then
-    pkg() {
-        flag=${1#-}
-        shift
-        case $flag in
-            a) doas pkg_add "$@" ;;
-            u) doas pkg_add -u "$@" ;;
-            d) doas pkg_delete "$@" ;;
-            s) pkg_info -Q "$@" ;;
-            i) pkg_info "$@" ;;
-            l) pkg_info
         esac
     }
 fi

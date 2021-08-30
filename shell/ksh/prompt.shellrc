@@ -20,7 +20,7 @@ _ps1_print_git() {
 }
 
 _reset_formatting() {
-    printf '%s' '\[\e[0;37m\]'
+    printf '%s' '\[\e[0;38m\]'
 }
 
 _ps1_print() {

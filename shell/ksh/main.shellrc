@@ -15,9 +15,13 @@ PS1_GIT="true"
 . ${SHELLRC_DIR}/git.shellrc
 
 if command -v pkg_add > /dev/null ; then
-	. ${SHELLRC_DIR}/openbsd.shellrc
+    . ${SHELLRC_DIR}/openbsd.shellrc
 elif command -v pacman > /dev/null ; then
-	. ${SHELLRC_DIR}/arch.shellrc
+    . ${SHELLRC_DIR}/arch.shellrc
+elif command -v xbps-install > /dev/null ; then
+    . ${SHELLRC_DIR}/void.shellrc
+elif command -v apt > /dev/null ; then
+    . ${SHELLRC_DIR}/linux.shellrc
 fi
 
 . ${SHELLRC_DIR}/options.shellrc
