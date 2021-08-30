@@ -1,37 +1,45 @@
-# Restart sxhkd
-super + shift + r
-	pkill -USR1 -x sxhkd
+alt + control + r
+    pkill -USR1 -x sxhkd
 
-# Application bindings
-alt + p
-	launcher dmenu -b -x 48 -y 48 -l 8 -w 480 -h 48
+alt  + p
+    applauncher rofi -theme ${XDG_CONFIG_HOME}/rofi/themes/papercolor.rasi
 
 alt + shift + Return
-	stwrapper
+    stwrapper
 
-alt + ctrl + Return
-	stwrapper t
+alt + control + Return
+    stwrapper t
+
+super + e
+    pcmanfm
 
 alt + shift + e
-	pcmanfm
+    st -n nvim-ide -g 164x52 -e nvim
 
-# Suspend, Lock
-super + shift + {x,l}
-	{sudo ZZZ, slock}
+super + { shift + x,l}
+    {sudo systemctl suspend, slock}
 
-# Brightness
 XF86MonBrightnessDown
-	bright -d 2
+    bright -d 2
 
 XF86MonBrightnessUp
-	bright -i 2
+    bright -i 2
 
-# Volume
 XF86AudioMute
-	vol -t
+    vol -t
 
 XF86AudioLowerVolume
-	vol -d 2
+    vol -d 2%
 
 XF86AudioRaiseVolume
-	vol -i 2
+    vol -i 2%
+
+XF86AudioMicMute
+    mic -t
+
+control + Print
+    maim | tee ~/images/$(date +%s).png | xclip -selection clipboard -t image/png
+
+shift + Print
+    maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+
