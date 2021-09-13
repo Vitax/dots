@@ -12,6 +12,7 @@ opt.whichwrap:append "<>hl"
 -- color scheme
 opt.termguicolors = true
 opt.background = ui.background
+opt.title = true
 g.colors_name = ui.theme
 
 opt.undofile = options.permanent_undo

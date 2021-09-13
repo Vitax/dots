@@ -6,7 +6,7 @@ base.ui = {
     background = "light",
 
     -- font options
-    italic_comments = false,
+    italic_comments = true,
 
     -- statusline options
     statusline = {
@@ -53,9 +53,6 @@ base.bindings = {
         cycleNext = "tj",
         cyclePrev = "tk",
     },
-    neoformat = {
-        format = "<C-k><C-d>"
-    },
     comment_nvim = {
         comment_toggle = "<C-k>c",
     },
@@ -97,29 +94,6 @@ base.bindings = {
         new_vertical = "<C-x>vt",
         new_horizontal = "<C-x>ht",
     },
-}
-
-base.plugin_status = {
-    -- UI
-    nvim_bufferline = true,
-    statusline = true,
-    nvim_colorizer = true,
-    blankline = true,
-    truezen_nvim = true,
-
-    -- lsp stuff
-    lspkind = true,
-    lspsignature = true,
-
-    -- git stuff
-    gitsigns = true,
-    vim_fugitive = true,
-
-    -- misc
-    neoformat = true,
-    vim_matchup = true,
-    nvim_comment = true,
-    telescope_media = true,
 }
 
 return base

@@ -1,6 +1,3 @@
--- Eviline config for lualine
--- Author: shadmansaleh
--- Credit: glepnir
 local lualine = require('lualine')
 
 local ui = require("main.utils").load_config().ui
@@ -63,12 +60,6 @@ end
 local function ins_right(component)
     table.insert(config.sections.lualine_x, component)
 end
-
-ins_left {
-    function() return '▊' end,
-    color = {fg = colors.blue}, -- Sets highlighting of component
-    left_padding = 0 -- We don't need space before this
-}
 
 ins_left {
     -- mode component
@@ -198,12 +189,6 @@ ins_right {
     color_modified = colors.orange,
     color_removed = colors.red,
     condition = conditions.hide_in_width
-}
-
-ins_right {
-    function() return '▊' end,
-    color = {fg = colors.blue},
-    right_padding = 0
 }
 
 -- Now don't forget to initialize lualine

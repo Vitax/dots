@@ -4,8 +4,6 @@ if not present then
    return
 end
 
-local plugin_status = require("main.utils").load_config().plugin_status
-
 true_zen.setup {
    ui = {
       bottom = {
@@ -26,10 +24,10 @@ true_zen.setup {
    },
    modes = {
       ataraxis = {
-         left_padding = 12,
-         right_padding = 12,
-         top_padding = 4,
-         bottom_padding = 4,
+         left_padding = 0,
+         right_padding = 0,
+         top_padding = 0,
+         bottom_padding = 0,
          ideal_writing_area_width = { 0 },
          auto_padding = false,
          keep_default_fold_fillchars = true,
@@ -52,10 +50,10 @@ true_zen.setup {
    },
    integrations = {
       vim_gitgutter = false,
-      statuline = plugin_status.statuline,
+      statuline = true,
       tmux = false,
       gitsigns = false,
-      nvim_bufferline = plugin_status.nvim_bufferline,
+      nvim_bufferline = true,
       limelight = false,
       vim_airline = false,
       vim_powerline = false,

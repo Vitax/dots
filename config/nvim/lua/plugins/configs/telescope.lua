@@ -3,7 +3,7 @@ if not present then
    return
 end
 
-require('telescope').setup{
+telescope.setup{
   defaults = {
     vimgrep_arguments = {
       'rg',
