@@ -1,23 +1,23 @@
-alt + control + r
+super + control + r
     pkill -USR1 -x sxhkd
 
-alt  + p
-    applauncher rofi -theme ${XDG_CONFIG_HOME}/rofi/themes/papercolor.rasi
+super + p
+    applauncher dmenu -x $(($(dimensions 0 -w) / 2 - 640 / 2)) -y $(($(dimensions 0 -h) / 2 - (32 * 7) + 28)) -w 640 -l 7 -h 32
 
-alt + shift + Return
+super + Return
     stwrapper
 
-alt + control + Return
-    stwrapper t
+super + control + Return
+    stwrapper -t
 
 super + e
     pcmanfm
 
-alt + shift + e
+super + shift + e
     st -n nvim-ide -g 164x52 -e nvim
 
-super + { shift + x,l}
-    {sudo systemctl suspend, slock}
+super + shift + Delete
+    powermenu
 
 XF86MonBrightnessDown
     bright -d 2

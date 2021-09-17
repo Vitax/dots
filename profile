@@ -1,17 +1,22 @@
 #!/bin/sh
 umask 022
 
+# Intel acceleration
+# ------------------
+export LIBVA_DRIVER_NAME=iHD
+
 # Set system path
 # ---------------
 PATH=/bin:/sbin
 PATH=/usr/sbin:/usr/bin:$PATH
-PATH=/usr/X11R6/bin:$PATH
 PATH=/usr/local/sbin:/usr/local/bin:$PATH
-PATH=$(printf '%s:' ${HOME}/bin/*/)${HOME}/bin:$PATH
+PATH=$(printf '%s:' ${HOME}/bin/*)${HOME}/bin:$PATH
 PATH=${HOME}/.local/bin:$PATH
+PATH=/usr/share/nodejs/yarn/bin:$PATH
 export PATH
 
-MANPATH=$(printf '%s:' ${HOME}/.local/share/man/man1/*/)
+# MANPATH=$(printf '%s:' ${HOME}/.local/share/man/man1/*)
+MANPATH=${HOME}/.local/share/man/man1
 MANPATH="/usr/share/man/man1/:$MANPATH"
 export MANPATH
 
@@ -20,20 +25,29 @@ export MANPATH
 export LC_CTYPE='en_US.UTF-8'
 export LANG="$LC_CTYPE" \
        LANGUAGE="$LC_CTYPE" \
-       LOCALE="$LC_CTYPE"
-       LC_ALL="$LC_CTYPE" \
+       LOCALE="$LC_CTYPE" \
+       LC_ALL="$LC_CTYPE"
 
-export XDG_MENU_PREFIX="xdg-"
+export XDG_SESSION_TYPE=X11
 export XDG_CURRENT_DESKTOP=X11
- 
+
 # Set editor
 # ----------
 export EDITOR=nvim
 
+
 # Set compiling and various dev flags
 # ---------------------------
-export CFLAGS='-O2 -pipe -fstack-protector-strong -fexceptions'
-# export NPROC=$(sysctl -n hw.ncpu)
+# export CFLAGS='-O2 -pipe -s -fstack-protector-strong'
+case $(uname) in
+    Linux)
+        if command -v nproc >/dev/null ; then
+            export NPROC="$(nproc)"
+        fi
+        ;;
+    *BSD)
+        export NPROC="$(sysctl -n hw.ncpu)"
+esac
 
 # Set custom variables for folders
 # --------------------------------
@@ -50,8 +64,6 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DESKTOP_DIR="${HOME}/Desktop"
 export TRASH_DIR="${XDG_DATA_HOME}/Trash"
-
-export XDG_OPEN=open
 
 export ENV="${XDG_FILES_DIR}/dots/shell/ksh/main.shellrc"
 

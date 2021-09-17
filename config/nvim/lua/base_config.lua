@@ -3,7 +3,7 @@ local base = {}
 base.ui = {
     -- theme options
     theme = "one",
-    background = "light",
+    background = "dark",
 
     -- font options
     italic_comments = true,

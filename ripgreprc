@@ -1,0 +1,4 @@
+--glob=!plugged
+--glob=!node_modules
+--glob=!__pycache__
+--glob=!docker
