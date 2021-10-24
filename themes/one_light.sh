@@ -15,8 +15,8 @@ color13=#A626A4
 color14=#0184BC
 color15=#494B53
 
-background=$color0
-foreground=$color15
+background=#FAFAFA
+foreground=#494B53
 
-cursor=$color7
+cursor=#9E9E9E
 
