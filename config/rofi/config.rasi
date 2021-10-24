@@ -1,29 +1,8 @@
 configuration {
-	modi: "drun,window";
-	font: "Terminus (TTF) 14";
-	display-drun: "Search:";
-	show-icons: true;
-	icon-theme: "Papirus";
-}
-
-* {
-	line-margin: 2px;
-	line-padding: 2px;
-	margin: 0px;
-	padding: 0px;
-}
-
-window {
-	location: north;
-	anchor: north;
-
-	y-offset: 32px;
-	width: 35%;
-
-	orientation: horizontal;
-}
-
-listview {
-	columns: 1;
-	lines: 5;
+    font: "PT Mono 14";
+    modi: "drun,window";
+    show-icons: true;
+    display-drun: "Search:";
+    display-window: "Search:";
+    icon-theme: "Papirus";
 }
