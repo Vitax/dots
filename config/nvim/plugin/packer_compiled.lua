@@ -83,6 +83,7 @@ _G.packer_plugins = {
     config = { "\27LJ\2\0027\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\28plugins.configs.truezen\frequire\0" },
     loaded = false,
     needs_bufread = false,
+    only_cond = false,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/TrueZen.nvim"
   },
   ["bufferline.nvim"] = {
@@ -125,12 +126,19 @@ _G.packer_plugins = {
   ["friendly-snippets"] = {
     loaded = false,
     needs_bufread = false,
+    only_cond = false,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/friendly-snippets"
   },
   ["indent-blankline.nvim"] = {
     loaded = false,
     needs_bufread = false,
+    only_cond = false,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/indent-blankline.nvim"
+  },
+  ["lsp_signature.nvim"] = {
+    config = { "\27LJ\2\2H\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14signature\27plugins.configs.others\frequire\0" },
+    loaded = true,
+    path = "/home/vitax/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
   },
   ["lualine.nvim"] = {
     config = { "\27LJ\2\2:\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\31plugins.configs.statusline\frequire\0" },
@@ -146,6 +154,7 @@ _G.packer_plugins = {
     config = { "\27LJ\2\2H\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14colorizer\27plugins.configs.others\frequire\0" },
     loaded = false,
     needs_bufread = false,
+    only_cond = false,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/nvim-colorizer.lua"
   },
   ["nvim-comment"] = {
@@ -153,6 +162,7 @@ _G.packer_plugins = {
     config = { "\27LJ\2\2F\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\fcomment\27plugins.configs.others\frequire\0" },
     loaded = false,
     needs_bufread = false,
+    only_cond = false,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/nvim-comment"
   },
   ["nvim-lspconfig"] = {
@@ -161,9 +171,8 @@ _G.packer_plugins = {
     path = "/home/vitax/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
-    commands = { "NvimTreeToggle" },
     config = { "\27LJ\2\0028\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\29plugins.configs.nvimtree\frequire\0" },
-    loaded = false,
+    loaded = true,
     needs_bufread = false,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
   },
@@ -171,6 +180,7 @@ _G.packer_plugins = {
     config = { "\27LJ\2\2:\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\31plugins.configs.treesitter\frequire\0" },
     loaded = false,
     needs_bufread = true,
+    only_cond = false,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
@@ -180,6 +190,7 @@ _G.packer_plugins = {
   ["packer.nvim"] = {
     loaded = false,
     needs_bufread = false,
+    only_cond = false,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/packer.nvim"
   },
   ["plenary.nvim"] = {
@@ -191,18 +202,21 @@ _G.packer_plugins = {
     config = { "\27LJ\2\0029\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\30plugins.configs.telescope\frequire\0" },
     loaded = false,
     needs_bufread = true,
+    only_cond = false,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/telescope.nvim"
   },
   ["vim-fugitive"] = {
     commands = { "Git", "Gdiff", "Gdiffsplit", "Gvdiffsplit", "Gwrite", "Gw" },
     loaded = false,
     needs_bufread = true,
+    only_cond = false,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/vim-fugitive"
   },
   ["vim-matchup"] = {
     after_files = { "/home/vitax/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
     loaded = false,
     needs_bufread = true,
+    only_cond = false,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/vim-matchup"
   },
   ["vim-one"] = {
@@ -212,10 +226,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Setup for: vim-fugitive
-time([[Setup for vim-fugitive]], true)
-try_loadstring("\27LJ\2\2>\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\rfugitive\18main.bindings\frequire\0", "setup", "vim-fugitive")
-time([[Setup for vim-fugitive]], false)
+-- Setup for: telescope.nvim
+time([[Setup for telescope.nvim]], true)
+try_loadstring("\27LJ\2\2?\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14telescope\18main.bindings\frequire\0", "setup", "telescope.nvim")
+time([[Setup for telescope.nvim]], false)
 -- Setup for: nvim-comment
 time([[Setup for nvim-comment]], true)
 try_loadstring("\27LJ\2\2B\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\17comment_nvim\18main.bindings\frequire\0", "setup", "nvim-comment")
@@ -224,6 +238,9 @@ time([[Setup for nvim-comment]], false)
 time([[Setup for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\2>\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\rnvimtree\18main.bindings\frequire\0", "setup", "nvim-tree.lua")
 time([[Setup for nvim-tree.lua]], false)
+time([[packadd for nvim-tree.lua]], true)
+vim.cmd [[packadd nvim-tree.lua]]
+time([[packadd for nvim-tree.lua]], false)
 -- Setup for: bufferline.nvim
 time([[Setup for bufferline.nvim]], true)
 try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\15bufferline\18main.bindings\frequire\0", "setup", "bufferline.nvim")
@@ -239,26 +256,34 @@ time([[Setup for indent-blankline.nvim]], false)
 time([[Setup for TrueZen.nvim]], true)
 try_loadstring("\27LJ\2\2=\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\ftruezen\18main.bindings\frequire\0", "setup", "TrueZen.nvim")
 time([[Setup for TrueZen.nvim]], false)
--- Setup for: telescope.nvim
-time([[Setup for telescope.nvim]], true)
-try_loadstring("\27LJ\2\2?\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14telescope\18main.bindings\frequire\0", "setup", "telescope.nvim")
-time([[Setup for telescope.nvim]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-try_loadstring("\27LJ\2\2:\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\31plugins.configs.bufferline\frequire\0", "config", "bufferline.nvim")
-time([[Config for bufferline.nvim]], false)
+-- Setup for: vim-fugitive
+time([[Setup for vim-fugitive]], true)
+try_loadstring("\27LJ\2\2>\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\rfugitive\18main.bindings\frequire\0", "setup", "vim-fugitive")
+time([[Setup for vim-fugitive]], false)
+-- Config for: lsp_signature.nvim
+time([[Config for lsp_signature.nvim]], true)
+try_loadstring("\27LJ\2\2H\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\14signature\27plugins.configs.others\frequire\0", "config", "lsp_signature.nvim")
+time([[Config for lsp_signature.nvim]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
 try_loadstring("\27LJ\2\0029\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\30plugins.configs.lspconfig\frequire\0", "config", "nvim-lspconfig")
 time([[Config for nvim-lspconfig]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-try_loadstring("\27LJ\2\0023\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\24plugins.configs.cmp\frequire\0", "config", "nvim-cmp")
-time([[Config for nvim-cmp]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 try_loadstring("\27LJ\2\2:\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\31plugins.configs.statusline\frequire\0", "config", "lualine.nvim")
 time([[Config for lualine.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\0028\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\29plugins.configs.nvimtree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+try_loadstring("\27LJ\2\2:\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\31plugins.configs.bufferline\frequire\0", "config", "bufferline.nvim")
+time([[Config for bufferline.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\2\0023\0\0\2\0\2\0\0046\0\0\0'\1\1\0B\0\2\1K\0\1\0\24plugins.configs.cmp\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd LuaSnip ]]
@@ -274,18 +299,17 @@ time([[Sequenced loading]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TZMinimalist lua require("packer.load")({'TrueZen.nvim'}, { cmd = "TZMinimalist", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TZAtaraxis lua require("packer.load")({'TrueZen.nvim'}, { cmd = "TZAtaraxis", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TZFocus lua require("packer.load")({'TrueZen.nvim'}, { cmd = "TZFocus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file CommentToggle lua require("packer.load")({'nvim-comment'}, { cmd = "CommentToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gvdiffsplit lua require("packer.load")({'vim-fugitive'}, { cmd = "Gvdiffsplit", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gdiffsplit lua require("packer.load")({'vim-fugitive'}, { cmd = "Gdiffsplit", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gw lua require("packer.load")({'vim-fugitive'}, { cmd = "Gw", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Git lua require("packer.load")({'vim-fugitive'}, { cmd = "Git", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gwrite lua require("packer.load")({'vim-fugitive'}, { cmd = "Gwrite", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gdiff lua require("packer.load")({'vim-fugitive'}, { cmd = "Gdiff", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TZMinimalist lua require("packer.load")({'TrueZen.nvim'}, { cmd = "TZMinimalist", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TZAtaraxis lua require("packer.load")({'TrueZen.nvim'}, { cmd = "TZAtaraxis", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file TZFocus lua require("packer.load")({'TrueZen.nvim'}, { cmd = "TZFocus", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file CommentToggle lua require("packer.load")({'nvim-comment'}, { cmd = "CommentToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gvdiffsplit lua require("packer.load")({'vim-fugitive'}, { cmd = "Gvdiffsplit", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gdiffsplit lua require("packer.load")({'vim-fugitive'}, { cmd = "Gdiffsplit", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gw lua require("packer.load")({'vim-fugitive'}, { cmd = "Gw", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Git lua require("packer.load")({'vim-fugitive'}, { cmd = "Git", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gwrite lua require("packer.load")({'vim-fugitive'}, { cmd = "Gwrite", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gdiff lua require("packer.load")({'vim-fugitive'}, { cmd = "Gdiff", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]

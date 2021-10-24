@@ -15,13 +15,6 @@ function others.comment()
    end
 end
 
-function others.lspkind()
-   local present, lspkind = pcall(require, "lspkind")
-   if present then
-      lspkind.init()
-   end
-end
-
 function others.luasnip()
    local present, luasnip = pcall(require, "luasnip")
    if not present then

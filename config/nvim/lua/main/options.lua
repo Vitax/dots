@@ -12,8 +12,8 @@ opt.whichwrap:append "<>hl"
 -- color scheme
 opt.termguicolors = true
 opt.background = ui.background
-opt.title = true
 g.colors_name = ui.theme
+g.one_allow_italics = 1
 
 opt.undofile = options.permanent_undo
 opt.fillchars = { eob = " " }

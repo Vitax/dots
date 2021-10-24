@@ -50,7 +50,7 @@ true_zen.setup {
    },
    integrations = {
       vim_gitgutter = false,
-      statuline = true,
+      lualine = true,
       tmux = false,
       gitsigns = false,
       nvim_bufferline = true,

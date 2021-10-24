@@ -54,6 +54,13 @@ return packer.startup(function()
     }
 
     use {
+        "ray-x/lsp_signature.nvim",
+        config = function()
+            require("plugins.configs.others").signature()
+        end
+    }
+
+    use {
         "hrsh7th/nvim-cmp",
         config = function()
             require("plugins.configs.cmp")
@@ -105,7 +112,6 @@ return packer.startup(function()
 
     use {
         "kyazdani42/nvim-tree.lua",
-        cmd = "NvimTreeToggle",
         config = function()
             require("plugins.configs.nvimtree")
         end,

@@ -22,10 +22,12 @@ local bindings = {}
 local silent_opt = { silent = true }
 
 function bindings.misc()
-    map("", misc_map.easy_command, ":")
+    map("n", misc_map.easy_command, ":")
+    map("n", misc_map.easy_open_file, ":edit ")
+    map("n", misc_map.close_window, ":q<CR>", silent_opt)
     map("n", misc_map.toggle_linenr, ":set nu!<CR>", silent_opt)
-    map("", misc_map.save_file, ":w <CR>", silent_opt)
-    map("", misc_map.hide_hls, ":nohls <CR>", silent_opt)
+    map("n", misc_map.save_file, ":w <CR>", silent_opt)
+    map("n", misc_map.hide_hls, ":nohls <CR>", silent_opt)
 
     -- region terminal mappings
     map("t", term_maps.esc_termmode, "<C-\\><C-n>", silent_opt)
@@ -77,9 +79,10 @@ function bindings.fugitive()
 end
 
 function bindings.nvimtree()
-    local m = cfg_bindings.nvimtree.treetoggle
+    local m = cfg_bindings.nvimtree
 
-    map("n", m, ":NvimTreeToggle<CR>", silent_opt)
+    map("n", m.treetoggle, ":NvimTreeToggle<CR>", silent_opt)
+    map("n", m.treefindfile, ":NvimTreeFindFile<CR>", silent_opt)
 end
 
 function bindings.truezen()

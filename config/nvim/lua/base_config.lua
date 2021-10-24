@@ -3,7 +3,7 @@ local base = {}
 base.ui = {
     -- theme options
     theme = "one",
-    background = "dark",
+    background = "light",
 
     -- font options
     italic_comments = true,
@@ -49,7 +49,7 @@ base.bindings = {
     bufferline = {
         new_buffer = "<S-t>",
         newtab = "<C-t>b",
-        close = "<leader>q",
+        close = "td",
         cycleNext = "tj",
         cyclePrev = "tk",
     },
@@ -64,13 +64,15 @@ base.bindings = {
     },
     misc = {
         easy_command = ";",
+        easy_open_file = "<C-k>x",
         save_file = "<leader>w",
-        close_buffer = "td",
+        close_window = "<leader>q",
         hide_hls = "<leader><leader>",
         toggle_linenr = "<leader>n",
     },
     nvimtree = {
         treetoggle = "<C-k>n",
+        treefindfile = "<C-m>f",
     },
     truezen = {
         ataraxisMode = "<leader>zz",
