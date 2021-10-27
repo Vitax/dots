@@ -2,7 +2,7 @@ super + control + r
     pkill -USR1 -x sxhkd
 
 super + p
-    applauncher dmenu -x $(($(dimensions 0 -w) / 2 - 640 / 2)) -y $(($(dimensions 0 -h) / 2 - (32 * 7) + 28)) -w 640 -l 7 -h 32
+   applauncher rofi -theme ~/.config/rofi/themes/launcher.rasi
 
 super + Return
     stwrapper

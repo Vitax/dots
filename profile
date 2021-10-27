@@ -12,8 +12,10 @@ PATH=/usr/sbin:/usr/bin:$PATH
 PATH=/usr/local/sbin:/usr/local/bin:$PATH
 PATH=$(printf '%s:' ${HOME}/bin/*)${HOME}/bin:$PATH
 PATH=${HOME}/.local/bin:$PATH
-PATH=/usr/share/nodejs/yarn/bin:$PATH
+PATH=${HOME}/.cargo/bin:$PATH
 export PATH
+
+export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
 
 # MANPATH=$(printf '%s:' ${HOME}/.local/share/man/man1/*)
 MANPATH=${HOME}/.local/share/man/man1
@@ -92,3 +94,4 @@ export MPD_HOST="${HOME}/.config/mpd/socket"
 # -----------------------------------
 rm -rf ${HOME}/tmp 2>/dev/null ||:
 mkdir -p ${HOME}/tmp
+. "$HOME/.cargo/env"

@@ -1,5 +1,4 @@
-/* Xft.dpi: 144 */
-Xft.dpi: 120
+Xft.dpi: 96
 
 Xft.antialias: true
 Xft.autohint: true
@@ -9,5 +8,5 @@ Xft.hintstyle:  none
 Xft.rgba: rgb
 
 Xcursor.theme: Breeze_Snow
-Xcursor.size: 32
+Xcursor.size: 16
 

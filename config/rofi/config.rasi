@@ -1,5 +1,5 @@
 configuration {
-    font: "PT Mono 14";
+    font: "PT Mono 12";
     modi: "drun,window";
     show-icons: true;
     display-drun: "Search:";

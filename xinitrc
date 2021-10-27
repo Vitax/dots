@@ -11,7 +11,7 @@ setxkbmap -option 'grp_led:caps'
     xrdb load ${HOME}/.Xresources
     xmodmap ~/.xmodmaprc
     xsetroot -cursor_name left_ptr
-    xset r rate 750 5
+    xset r off
     xset m 0 0
     xset b off
     xset s 300 300
@@ -19,15 +19,14 @@ setxkbmap -option 'grp_led:caps'
     vol -m
 }
 
-[ -f ${HOME}/.fehbg ] && ${HOME}/.fehbg
-
 dunst &
 picom --config ${XDG_CONFIG_HOME}/picom/picom.conf --experimental-backends &
 redshift -c ${XDG_CONFIG_HOME}/redshift/redshift.conf &
 sxhkd -c ${XDG_CONFIG_HOME}/sxhkd/sxhkdrc &
 
-stwrapper &
+[ -f ${HOME}/.fehbg ] && ${HOME}/.fehbg
 
+stwrapper &
 status_bar dwm &
 
 while : ; do
