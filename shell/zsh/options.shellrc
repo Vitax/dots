@@ -16,7 +16,7 @@ if [ $PS1_GIT = true ]; then
     autoload -Uz vcs_info
 
     # Format the vcs_info_msg_0_ variable
-    zstyle ':vcs_info:git:*' formats '[%B %F{blue}%b %F{reset}]'
+    zstyle ':vcs_info:git:*' formats '<%b%F{blue}%F{reset}>'
     zstyle ':completion:*' menu select
 fi
 

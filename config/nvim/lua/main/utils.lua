@@ -17,18 +17,20 @@ function utils.load_config(reload)
 end
 
 function utils.hide_statusline() 
-    local ui_statusline = utils.load_config().ui.statusline
     local api = vim.api
     local buftype = api.nvim_buf_get_option("%", "ft")
 
-    if vim.tbl_contains(ui_statusline.shown, buftype) then
-        api.nvim_set_option("laststatus", 2)
-        return
+    local hidden = utils.load_config().ui.statusline.hidden
+    local shown = utils.load_config().ui.statusline.shown
+
+    if vim.tbl_contains(shown, buftype) then
+	api.nvim_set_option("laststatus", 2)
+	return
     end
 
-    if vim.tbl_contains(ui_statusline.hidden, buftype) then
+    if vim.tbl_contains(hidden, buftype) then
         api.nvim_set_option("laststatus", 0)
-        return
+	return
     else
         api.nvim_set_option("laststatus", 2)
     end

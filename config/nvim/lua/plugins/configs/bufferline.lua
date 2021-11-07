@@ -10,7 +10,7 @@ bufferline.setup {
             {
                 filetype = "NvimTree",
                 text = "File Explorer",
-                padding = 1 
+                padding = 2 
             }
         },
         close_icon = "",
@@ -19,12 +19,12 @@ bufferline.setup {
         modified_icon = "",
         left_trunc_marker = "",
         right_trunc_marker = "",
-        max_name_length = 14,
-        max_prefix_length = 13,
+        max_name_length = 48,
+        max_prefix_length = 24,
         tab_size = 0,
         show_tab_indicators = true,
         enforce_regular_tabs = false,
-        show_buffer_close_icons = true,
+        show_buffer_close_icons = false,
         show_close_icon = false,
         separator_style = "thin",
         always_show_bufferline = true,

@@ -38,6 +38,10 @@ return packer.startup(function()
     }
 
     use {
+        "https://gitlab.com/protesilaos/tempus-themes-vim.git",
+    }
+
+    use {
         "norcalli/nvim-colorizer.lua",
         event = "BufRead",
         config = function()
@@ -173,8 +177,8 @@ return packer.startup(function()
 
     use {
         "lukas-reineke/indent-blankline.nvim",
-        event = "BufRead",
-        setup = function()
+	event = "BufRead",
+        config = function()
             require("plugins.configs.others").blankline()
         end,
     }

@@ -2,7 +2,7 @@ local base = {}
 
 base.ui = {
     -- theme options
-    theme = "one",
+    theme = "tempus_dawn",
     background = "light",
 
     -- font options
@@ -10,19 +10,20 @@ base.ui = {
 
     -- statusline options
     statusline = {
-        hidden = {
-            "NvimTree",
-            "terminal",
-            "help",
-        },
-        shown = {},
-        style = "round",
+	hidden = {
+	    "NvimTree",
+	    "terminal",
+	    "help",
+	},
+	shown = {},
+	style = "round",
     },
 }
 
 base.options = {
     auto_save = false,
     permanent_undo = false,
+    completeopt = "menuone,noselect",
 
     hidden = true,
     ruler = false,
@@ -47,54 +48,54 @@ base.options = {
 
 base.bindings = {
     bufferline = {
-        new_buffer = "<S-t>",
-        newtab = "<C-t>b",
-        close = "td",
-        cycleNext = "tj",
-        cyclePrev = "tk",
+	new_buffer = "<S-t>",
+	newtab = "<C-t>b",
+	close = "td",
+	cycleNext = "tj",
+	cyclePrev = "tk",
     },
     comment_nvim = {
-        comment_toggle = "<C-k>c",
+	comment_toggle = "<C-k>c",
     },
     fugitive = {
-        Git = "<leader>gs",
-        diffget_2 = "<leader>gh",
-        diffget_3 = "<leader>gl",
-        git_blame = "<leader>gb",
+	Git = "<leader>gs",
+	diffget_2 = "<leader>gh",
+	diffget_3 = "<leader>gl",
+	git_blame = "<leader>gb",
     },
     misc = {
-        easy_command = ";",
-        easy_open_file = "<C-k>x",
-        save_file = "<leader>w",
-        close_window = "<leader>q",
-        hide_hls = "<leader><leader>",
-        toggle_linenr = "<leader>n",
+	easy_command = ";",
+	easy_open_file = "<C-k>x",
+	save_file = "<leader>w",
+	close_window = "<leader>q",
+	hide_hls = "<leader><leader>",
+	toggle_linenr = "<leader>n",
     },
     nvimtree = {
-        treetoggle = "<C-k>n",
-        treefindfile = "<C-m>f",
+	treetoggle = "<C-k>n",
+	treefindfile = "<C-m>f",
     },
     truezen = {
-        ataraxisMode = "<leader>zz",
-        minimalisticmode = "<leader>zm",
-        focusmode = "<leader>zf",
+	ataraxisMode = "<leader>zz",
+	minimalisticmode = "<leader>zm",
+	focusmode = "<leader>zf",
     },
     telescope = {
-        live_grep = "<leader>fw",
-        git_status = "<leader>gt",
-        git_commits = "<leader>cm",
-        find_files = "<leader>ff",
-        buffers = "<leader>fb",
-        help_tags = "<leader>fh",
-        oldfiles = "<leader>fo",
+	live_grep = "<leader>fw",
+	git_status = "<leader>gt",
+	git_commits = "<leader>cm",
+	find_files = "<leader>ff",
+	buffers = "<leader>fb",
+	help_tags = "<leader>fh",
+	oldfiles = "<leader>fo",
     },
     terminal = {
-        esc_termmode = "<C-x><C-c>",
-        esc_hide_termmode = "<C-x><C-q>",
-        pick_term = "<C-x>t",
-        new_window = "<C-x>nt",
-        new_vertical = "<C-x>vt",
-        new_horizontal = "<C-x>ht",
+	esc_termmode = "<C-x><C-c>",
+	esc_hide_termmode = "<C-x><C-q>",
+	pick_term = "<C-x>t",
+	new_window = "<C-x>nt",
+	new_vertical = "<C-x>vt",
+	new_horizontal = "<C-x>ht",
     },
 }
 

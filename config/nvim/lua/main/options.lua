@@ -1,4 +1,5 @@
 local opt = vim.opt
+local o = vim.o
 local g = vim.g
 local cmd = vim.cmd
 
@@ -47,6 +48,9 @@ opt.smartindent = options.smartindent
 
 g.mapleader = options.mapleader
 g.auto_save = options.autosave
+
+o.completeopt = options.completeopt
+
 
 local disabled_built_ins = {
    "netrw",
