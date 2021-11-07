@@ -5,6 +5,8 @@ umask 022
 # ------------------
 export LIBVA_DRIVER_NAME=iHD
 
+export $(dbus-launch)
+
 # Set system path
 # ---------------
 PATH=/bin:/sbin
@@ -21,9 +23,6 @@ MANPATH=${HOME}/.local/share/man/man1
 MANPATH="/usr/share/man/man1/:$MANPATH"
 export MANPATH
 
-export XDG_RUNTIME_DIR=/run/user/$UID
-
-# Define system language
 # ----------------------
 export LC_CTYPE='en_US.UTF-8'
 export LANG="$LC_CTYPE" \
@@ -95,4 +94,4 @@ export MPD_HOST="${HOME}/.config/mpd/socket"
 # -----------------------------------
 rm -rf ${HOME}/tmp 2>/dev/null ||:
 mkdir -p ${HOME}/tmp
-. "$HOME/.cargo/env"
+

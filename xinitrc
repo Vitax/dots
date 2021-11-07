@@ -29,6 +29,8 @@ dunst &
 picom --config ${XDG_CONFIG_HOME}/picom/picom.conf --experimental-backends &
 redshift -c ${XDG_CONFIG_HOME}/redshift/redshift.conf &
 sxhkd -c ${XDG_CONFIG_HOME}/sxhkd/sxhkdrc &
+/usr/libexec/polkit-gnome-authentication-agent-1 &
+udiskie &
 
 [ -f ${HOME}/.fehbg ] && ${HOME}/.fehbg
 

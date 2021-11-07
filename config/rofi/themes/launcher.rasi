@@ -1,7 +1,6 @@
 @import "colors.rasi"
 
 window {
-    border-radius: 16px;
     background-color: @background;
     border: 0px;
     height: 56%;
@@ -49,7 +48,7 @@ inputbar {
 listview {
     border: 4px 0px 0px ;
     border-color: @separatorcolor;
-    columns: 2;
+    columns: 3;
     lines: 7;
     spacing: 0% 0% 0% 0%;
     scrollbar: false;
@@ -60,20 +59,20 @@ listview {
 element {
     padding: 0.5%;
     border: 0px;
-    orientation: horizontal;
+    orientation: vertical;
     margin: 1%;
 }
 
 element-icon {
     horizontal-align: 0.5;
     vertical-align: 0.5;
-    padding: 0.5% 0% 0.5% 0.5%;
+    padding: 0.5% 0.5% 0.5% 0.5%;
     size: 32px;
 }
 
 element-text {
     padding: 0.5% 0.5% 0.5% 0.5%;
-    horizontal-align: 0.0;
+    horizontal-align: 0.5;
     vertical-align: 0.5;
 }
 

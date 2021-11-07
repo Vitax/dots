@@ -64,7 +64,7 @@ for _, lsp in ipairs(servers) do
       capabilities = capabilities,
       -- root_dir = vim.loop.cwd,
       flags = {
-         debounce_text_changes = 150,
+         debounce_text_changes = 250,
       },
    }
 end
