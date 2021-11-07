@@ -39,7 +39,7 @@ base.options = {
 
     numberwidth = 4,
     shiftwidth = 4,
-    expandtab = true,
+    expandtab = false,
     smartindent = true,
 
     mapleader = ",",

@@ -1,5 +1,6 @@
 local opt = vim.opt
 local g = vim.g
+local cmd = vim.cmd
 
 local config = require("main.utils").load_config()
 
@@ -10,10 +11,11 @@ opt.shortmess:append "sI"
 opt.whichwrap:append "<>hl"
 
 -- color scheme
+opt.title = false
 opt.termguicolors = true
 opt.background = ui.background
-g.colors_name = ui.theme
 g.one_allow_italics = 1
+cmd("colorscheme " .. ui.theme)
 
 opt.undofile = options.permanent_undo
 opt.fillchars = { eob = " " }

@@ -12,7 +12,6 @@ PATH=/usr/sbin:/usr/bin:$PATH
 PATH=/usr/local/sbin:/usr/local/bin:$PATH
 PATH=$(printf '%s:' ${HOME}/bin/*)${HOME}/bin:$PATH
 PATH=${HOME}/.local/bin:$PATH
-PATH=${HOME}/.cargo/bin:$PATH
 export PATH
 
 export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
@@ -21,6 +20,8 @@ export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
 MANPATH=${HOME}/.local/share/man/man1
 MANPATH="/usr/share/man/man1/:$MANPATH"
 export MANPATH
+
+export XDG_RUNTIME_DIR=/run/user/$UID
 
 # Define system language
 # ----------------------

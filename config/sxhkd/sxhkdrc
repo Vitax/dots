@@ -2,13 +2,13 @@ super + control + r
     pkill -USR1 -x sxhkd
 
 super + p
-   applauncher rofi -theme ~/.config/rofi/themes/launcher.rasi
+   launchers rofi -theme ~/.config/rofi/themes/launcher.rasi
 
 super + Return
-    stwrapper
+    st
 
 super + control + Return
-    stwrapper -t
+    st_tabbed
 
 super + e
     pcmanfm
