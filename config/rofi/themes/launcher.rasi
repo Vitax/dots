@@ -2,8 +2,8 @@
 
 window {
     background-color: @background;
-    border: 0px;
-    height: 56%;
+    border: 1px;
+    height: 58%;
     width: 40%;
 }
 

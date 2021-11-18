@@ -5,7 +5,7 @@ super + p
    launchers rofi -theme ~/.config/rofi/themes/launcher.rasi
 
 super + Return
-    st
+    st -n "Simple Terminal" -T "Simple Terminal"
 
 super + control + Return
     st_tabbed

@@ -1,5 +1,6 @@
-config/nvim/plugged/
+config/nvim/lua/plugin
+
+config/nvim/plugin/
 config/nvim/.netrwhist
-config/nvim-lua/plugin
 
 config/emacs/elpa
