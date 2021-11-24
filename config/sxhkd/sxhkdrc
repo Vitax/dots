@@ -20,19 +20,19 @@ super + shift + Delete
     powermenu
 
 XF86MonBrightnessDown
-    bright -d 2
+    bright -d 2 ; kill -58 $(pidof dwmblocks)
 
 XF86MonBrightnessUp
-    bright -i 2
+    bright -i 2 ; kill -58 $(pidof dwmblocks)
 
 XF86AudioMute
-    vol -t
+    vol -t ; kill -59 $(pidof dwmblocks)
 
 XF86AudioLowerVolume
-    vol -d 2%
+    vol -d 2% ; kill -59 $(pidof dwmblocks)
 
 XF86AudioRaiseVolume
-    vol -i 2%
+    vol -i 2% ; kill -59 $(pidof dwmblocks)
 
 XF86AudioMicMute
     mic -t
