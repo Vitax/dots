@@ -2,8 +2,8 @@ local base = {}
 
 base.ui = {
     -- theme options
-    theme = "tempus_dawn",
-    background = "light",
+    theme = "one",
+    background = "dark",
 
     -- font options
     italic_comments = true,

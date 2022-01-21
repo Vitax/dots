@@ -4,3 +4,4 @@ config/nvim/plugin/
 config/nvim/.netrwhist
 
 config/emacs/elpa
+config/emacs/auto-save-list

@@ -5,34 +5,34 @@ super + p
    launchers rofi -theme ~/.config/rofi/themes/launcher.rasi
 
 super + Return
-    st -n "Simple Terminal" -T "Simple Terminal"
+    kitty
 
-super + control + Return
-    st_tabbed
+#super + control + Return
+#    st_tabbed
 
 super + e
     pcmanfm
 
 super + shift + e
-    st -n nvim-ide -g 164x52 -e nvim
+    emacsclient -c -a "emacs"
 
 super + shift + Delete
     powermenu
 
 XF86MonBrightnessDown
-    bright -d 2 ; kill -58 $(pidof dwmblocks)
+    bright -d 2 ; update_dwmblocks 26
 
 XF86MonBrightnessUp
-    bright -i 2 ; kill -58 $(pidof dwmblocks)
+    bright -i 2 ; update_dwmblocks 26
 
 XF86AudioMute
-    vol -t ; kill -59 $(pidof dwmblocks)
+    vol -t ; update_dwmblocks 27
 
 XF86AudioLowerVolume
-    vol -d 2% ; kill -59 $(pidof dwmblocks)
+    vol -d 2% ; update_dwmblocks 27
 
 XF86AudioRaiseVolume
-    vol -i 2% ; kill -59 $(pidof dwmblocks)
+    vol -i 2% ; update_dwmblocks 27
 
 XF86AudioMicMute
     mic -t

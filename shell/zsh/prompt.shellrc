@@ -5,7 +5,7 @@ precmd() {
 }
 
 setzshuser() {
-    printf '%s' "# %B%F{yellow}%n% ${rc} %B%F{green} @ %B%F{red}%m %b%F{reset}"
+    printf '%s' "# %B%F{yellow}%n% ${rc}%B%F{green}:%B%F{red}%m %b%F{reset}"
 }
 
 setzshpwd() {

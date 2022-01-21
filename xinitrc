@@ -1,8 +1,6 @@
 #!/bin/sh -e
 # vim:ft=config
 
-display_manager='dwm'
-
 # Set capslock to change language layout
 # --------------------------------------
 setxkbmap -layout us,de
@@ -21,28 +19,23 @@ setxkbmap -option 'grp_led:caps'
     vol -m
 }
 
-[ -f ${HOME}/.fehbg ] && ${HOME}/.fehbg
+if [ "$(xrandr --listactivemonitors | grep dp-1)" != '' ] && [ "$(xrandr --listactivemonitors | grep hdmi-1)" != '' ]  ; then
+    xrandr --output dp-1 --mode 2560x1440 --refresh 143.91 --output hdmi-1 --above dp-1
+fi
 
-# if [ "$(xrandr --listactivemonitors | grep DP-1)" != '' ] && [ "$(xrandr --listactivemonitors | grep HDMI-1)" != '' ]  ; then
-#     xrandr --output DP-1 --mode 2560x1440 --refresh 143.91 --output HDMI-1 --above DP-1
-# fi
+nitrogen --restore &
 
-dunst &
 picom --config ${XDG_CONFIG_HOME}/picom/picom.conf --experimental-backends &
 redshift -c ${XDG_CONFIG_HOME}/redshift/redshift.conf &
 sxhkd -c ${XDG_CONFIG_HOME}/sxhkd/sxhkdrc &
+dunst &
+emacs --daemon &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
-[ -f ${HOME}/.fehbg ] && ${HOME}/.fehbg
-st -n "Simple Terminal" -T "Simple Terminal"  &
-dwmblocks &
 
-case $display_manager in
-    dwm)
-	while : ; do
-	    dwm && break || continue
-	done
-	;;
-    openbox)
-	openbox
-	;;
-esac
+kitty &
+
+status_info &
+
+while : ; do
+    dwm || continue && break;
+done

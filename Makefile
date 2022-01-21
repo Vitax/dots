@@ -28,8 +28,8 @@ setup-shell:
 	ln -sf ${XDG_FILES_DIR}/dots/shell/zsh/main.shellrc ${HOME}/.zshrc
 
 setup-fonts:
-	[ -d ${HOME}/.fonts ] && rm ${HOME}/.fonts ; \
-	ln -sf ${XDG_FILES_DIR}/dots/fonts ${HOME}/.fonts ; \
+	[ -d ${XDG_DATA_HOME}/.fonts ] && rm ${XDG_DATA_HOME}/.fonts ; \
+	ln -sf ${XDG_DATA_XDG_FILES_DIR}/dots/fonts ${XDG_DATA_HOME}/.fonts ; \
 	fc-cache -fv
 
 setup-bin:
@@ -59,7 +59,7 @@ clean-shell:
 	rm ${HOME}/.zshrc
 
 clean-fonts:
-	rm ${HOME}/.fonts ; \
+	rm ${XDG_DATA_HOME}/.fonts ; \
 	fc-cache -fv
 
 clean-bin:

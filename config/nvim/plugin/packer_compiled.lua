@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -74,7 +74,7 @@ _G.packer_plugins = {
     config = { "\27LJ\2\2F\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\fluasnip\27plugins.configs.others\frequire\0" },
     load_after = {},
     loaded = true,
-    needs_bufread = false,
+    needs_bufread = true,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip",
     wants = { "friendly-snippets" }
@@ -225,11 +225,6 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["tempus-themes-vim.git"] = {
-    loaded = true,
-    path = "/home/vitax/.local/share/nvim/site/pack/packer/start/tempus-themes-vim.git",
-    url = "https://gitlab.com/protesilaos/tempus-themes-vim"
   },
   ["vim-fugitive"] = {
     commands = { "Git", "Gdiff", "Gdiffsplit", "Gvdiffsplit", "Gwrite", "Gw" },

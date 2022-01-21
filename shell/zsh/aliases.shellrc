@@ -25,8 +25,11 @@ alias h='head -n 15'
 alias t='tail -n 15'
 alias h1='head -n 1'
 alias t1='tail -n 1'
+
 alias cmd=command
 alias pk=pkill
 alias w=which
+
 alias py=python3
 alias dm='dmesg | tail -n 20'
+alias svim=sudoedit

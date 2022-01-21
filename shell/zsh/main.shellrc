@@ -3,7 +3,7 @@ SHELLRC_DIR=${XDG_FILES_DIR}/dots/shell/zsh
 
 ## internal variables
 HISTORY_STYLE=default # [default/per-shell]
-PS1_STYLE=pwd    # [user-pwd-date/user/pwd/date]
+PS1_STYLE=user-pwd    # [user-pwd/user/pwd/date]
 PS1_GIT=true          # [true/false]
 
 . ${SHELLRC_DIR}/options.shellrc
