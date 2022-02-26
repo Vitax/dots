@@ -226,6 +226,11 @@ _G.packer_plugins = {
     path = "/home/vitax/.local/share/nvim/site/pack/packer/opt/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tempus-themes-vim.git"] = {
+    loaded = true,
+    path = "/home/vitax/.local/share/nvim/site/pack/packer/start/tempus-themes-vim.git",
+    url = "https://gitlab.com/protesilaos/tempus-themes-vim"
+  },
   ["vim-fugitive"] = {
     commands = { "Git", "Gdiff", "Gdiffsplit", "Gvdiffsplit", "Gwrite", "Gw" },
     loaded = false,
@@ -347,5 +352,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

@@ -38,6 +38,10 @@ return packer.startup(function()
     }
 
     use {
+	"https://gitlab.com/protesilaos/tempus-themes-vim.git"
+    }
+
+    use {
         "norcalli/nvim-colorizer.lua",
         event = "BufRead",
         config = function()

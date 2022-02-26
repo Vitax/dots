@@ -12,7 +12,7 @@ mainbox {
     border: 0;
     padding: 0;
     spacing: 1%;
-    padding: 2% 1.5% 2% 1.5%;
+    padding: 1% 1% 1% 1%;
 }
 
 entry {
@@ -25,14 +25,14 @@ entry {
 
 prompt {
     spacing: 0;
-    padding: 0.4% 0.5% 0% -0.5%;
+    padding: 0.5% 0.5% 0% -0.5%;
     text-color: @normal-foreground;
 }
 
 message {
     border:       2px 0px 0px ;
     border-color: @separatorcolor;
-    padding:      1px ;
+    padding:      1px;
 }
 
 inputbar {
@@ -46,7 +46,7 @@ inputbar {
 }
 
 listview {
-    border: 4px 0px 0px ;
+    border: 0px;
     border-color: @separatorcolor;
     columns: 3;
     lines: 7;

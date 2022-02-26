@@ -1,8 +1,8 @@
 configuration {
-    font: "PT Mono 12";
+    font: "JetBrains Mono 12";
     modi: "drun,window";
     show-icons: true;
     display-drun: "Search:";
     display-window: "Search:";
-    icon-theme: "Papirus";
+    icon-theme: "Yaru";
 }

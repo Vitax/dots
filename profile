@@ -5,8 +5,6 @@ umask 022
 # ------------------
 export LIBVA_DRIVER_NAME=iHD
 
-export $(dbus-launch)
-
 # Set system path
 # ---------------
 PATH=/bin:/sbin

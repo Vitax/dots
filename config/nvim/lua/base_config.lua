@@ -2,7 +2,7 @@ local base = {}
 
 base.ui = {
     -- theme options
-    theme = "one",
+    theme = "tempus_dawn",
     background = "light",
 
     -- font options
