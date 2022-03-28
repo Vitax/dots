@@ -4,4 +4,4 @@
 --glob=!build
 --glob=!__pycache__
 --glob=!docker
---globa=!lib
+--glob=!lib

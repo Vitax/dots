@@ -1,4 +1,3 @@
-
 local colors = {
     bg = '#eff0f2',
     fg = '#4a4b4e',

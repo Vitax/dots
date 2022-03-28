@@ -1,7 +1,5 @@
 local opt = vim.opt
-local o = vim.o
 local g = vim.g
-local cmd = vim.cmd
 
 local config = require("main.utils").load_config()
 
@@ -16,7 +14,7 @@ opt.title = false
 opt.termguicolors = true
 opt.background = ui.background
 g.one_allow_italics = 1
-cmd("colorscheme " .. ui.theme)
+vim.cmd("colorscheme " .. ui.theme)
 
 opt.undofile = options.permanent_undo
 opt.fillchars = { eob = " " }
@@ -48,9 +46,6 @@ opt.smartindent = options.smartindent
 
 g.mapleader = options.mapleader
 g.auto_save = options.autosave
-
-o.completeopt = options.completeopt
-
 
 local disabled_built_ins = {
    "netrw",
