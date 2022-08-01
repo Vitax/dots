@@ -1,8 +1,0 @@
-configuration {
-    font: "JetBrains Mono 12";
-    modi: "drun,window";
-    show-icons: true;
-    display-drun: "Search:";
-    display-window: "Search:";
-    icon-theme: "Yaru";
-}

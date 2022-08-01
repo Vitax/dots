@@ -22,6 +22,9 @@ local bindings = {}
 local silent_opt = { silent = true }
 
 function bindings.misc()
+    map("n", misc_map.next_buffer, ":bn<CR>")
+    map("n", misc_map.prev_buffer, ":bp<CR>")
+    map("n", misc_map.kill_buffer, ":bp<bar>sp<bar>bn<bar>bd<CR>")
     map("n", misc_map.easy_command, ":")
     map("n", misc_map.easy_open_file, ":edit ")
     map("n", misc_map.close_window, ":q<CR>", silent_opt)
@@ -104,7 +107,6 @@ function bindings.telescope()
     map("n", m.help_tags, ":Telescope help_tags<CR>", silent_opt)
     map("n", m.oldfiles, ":Telescope oldfiles<CR>", silent_opt)
 end
-
 -- endregion plugin_bindings
 
 return bindings

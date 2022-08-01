@@ -2,16 +2,13 @@ super + control + r
     pkill -USR1 -x sxhkd
 
 super + p
-   launchers rofi -theme ~/.config/rofi/themes/launcher.rasi
+    launchers rofi -theme ${XDG_CONFIG_HOME}/rofi/launcher
 
 super + Return
     kitty
 
-#super + control + Return
-#    st_tabbed
-
 super + e
-    pcmanfm
+    thunar
 
 super + shift + e
     emacsclient -c -a "emacs"
@@ -20,19 +17,19 @@ super + shift + Delete
     powermenu
 
 XF86MonBrightnessDown
-    bright -d 2 ; update_dwmblocks 26
+    bright -d 2
 
 XF86MonBrightnessUp
-    bright -i 2 ; update_dwmblocks 26
+    bright -i 2
 
 XF86AudioMute
-    vol -t ; update_dwmblocks 27
+    vol -t
 
 XF86AudioLowerVolume
-    vol -d 2% ; update_dwmblocks 27
+    vol -d 2%
 
 XF86AudioRaiseVolume
-    vol -i 2% ; update_dwmblocks 27
+    vol -i 2%
 
 XF86AudioMicMute
     mic -t

@@ -2,7 +2,7 @@ local base = {}
 
 base.ui = {
     -- theme options
-    theme = "tempus_autumn",
+    theme = "tempus_winter",
     background = "dark",
 
     -- font options
@@ -47,13 +47,6 @@ base.options = {
 }
 
 base.bindings = {
-    bufferline = {
-	new_buffer = "<S-t>",
-	newtab = "<C-t>b",
-	close = "td",
-	cycleNext = "tj",
-	cyclePrev = "tk",
-    },
     comment_nvim = {
 	comment_toggle = "<C-k>c",
     },
@@ -70,6 +63,9 @@ base.bindings = {
 	close_window = "<leader>q",
 	hide_hls = "<leader><leader>",
 	toggle_linenr = "<leader>n",
+	next_buffer = "tj",
+	prev_buffer = "tk",
+	kill_buffer = "td",
     },
     nvimtree = {
 	treetoggle = "<C-k>n",
@@ -97,6 +93,9 @@ base.bindings = {
 	new_vertical = "<C-x>vt",
 	new_horizontal = "<C-x>ht",
     },
+    lsp_saga = {
+	hover = "<silent>K",
+    }
 }
 
 return base

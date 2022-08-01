@@ -1,4 +1,5 @@
 #!/bin/sh
+
 umask 022
 
 # Intel acceleration
@@ -10,11 +11,11 @@ export LIBVA_DRIVER_NAME=iHD
 PATH=/bin:/sbin
 PATH=/usr/sbin:/usr/bin:$PATH
 PATH=/usr/local/sbin:/usr/local/bin:$PATH
-PATH=$(printf '%s:' ${HOME}/bin/*)${HOME}/bin:$PATH
-PATH=${HOME}/.local/bin:$PATH
-export PATH
 
-export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
+PATH=${HOME}/bin:$PATH
+PATH=${HOME}/.local/bin:$PATH
+PATH=${HOME}/node_modules/.bin:$PATH
+export PATH
 
 # MANPATH=$(printf '%s:' ${HOME}/.local/share/man/man1/*)
 MANPATH=${HOME}/.local/share/man/man1
@@ -64,8 +65,6 @@ export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DESKTOP_DIR="${HOME}/Desktop"
 export TRASH_DIR="${XDG_DATA_HOME}/Trash"
-
-export ENV="${XDG_FILES_DIR}/dots/shell/ksh/main.shellrc"
 
 # Set java variables
 # ------------------

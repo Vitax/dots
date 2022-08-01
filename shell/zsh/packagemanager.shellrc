@@ -13,6 +13,20 @@ if command -v xbps-query >/dev/null ; then
             s) xbps-query --repository -s "$@" ;;
         esac
     }
+# Fedora
+elif command -v dnf > /dev/null ; then
+    pkg() {
+	flag=${1#-}
+	shift
+	case $flag in
+	    a) sudo dnf install "$@" ;;
+	    u) sudo dnf update "$@"; sudo dnf upgrade ;;
+	    i) ;;
+	    l) dnf history userinstalled ;;
+	    s) dnf search "$@" ;;
+	    d) sudo dnf remove "$@" ; sudo dnf autoremove ;;
+	esac
+    }
 # Ubuntu / Debian
 elif command -v apt >/dev/null ; then
     pkg() {
@@ -20,7 +34,7 @@ elif command -v apt >/dev/null ; then
         shift
         case $flag in
             a) sudo apt install --fix-broken "$@" ;;
-            u) sudo apt update ; sudo apt upgrade "$@" ;;
+            u) sudo apt update "$@" ; sudo apt upgrade ;;
             i) apt show "$@" ;;
             s) apt search "$@" ;;
             l) apt list --installed "$@" ;;

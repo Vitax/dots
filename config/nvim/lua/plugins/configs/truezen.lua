@@ -53,7 +53,7 @@ true_zen.setup {
       lualine = true,
       tmux = false,
       gitsigns = false,
-      nvim_bufferline = true,
+      nvim_bufferline = false,
       limelight = false,
       vim_airline = false,
       vim_powerline = false,

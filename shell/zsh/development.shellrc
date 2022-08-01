@@ -10,7 +10,7 @@ alias rustup='curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh'
 # quick recompile
 rcp() {
     case $1 in
-        st|dwm|dmenu|surf|tabbed|sent)
+        st|dwm|dmenu|surf|tabbed|sent|slock)
             cd "${XDG_FILES_DIR}"/src/suckless
             sh ./build "$@"
             cd - >/dev/null

@@ -2,6 +2,8 @@
 # vim:ft=config
 
 # Helpers
+WM=dwm
+
 run() {
     cmd=$1
     shift
@@ -25,30 +27,44 @@ setxkbmap -option 'grp_led:caps'
     xset m 0 0
     xset b off
     xset s 300 300
-#    bright -s 20
-#    vol -m
 }
-
-if [ "$(xrandr --listactivemonitors | grep dp-1)" != '' ] && [ "$(xrandr --listactivemonitors | grep hdmi-1)" != '' ]  ; then
-    xrandr --output dp-1 --mode 2560x1440 --refresh 143.91 --output hdmi-1 --above dp-1
-fi
 
 run nitrogen --restore
 
-run dunst
-run emacs --daemon
-run nm-applet
-run /usr/libexec/polkit-gnome-authentication-agent-1
+run xfsettingsd
+run xfce4-power-manager
+run xss-lock -- slock
 run picom --config ${XDG_CONFIG_HOME}/picom/picom.conf --experimental-backends
 run redshift -c ${XDG_CONFIG_HOME}/redshift/redshift.conf
-run sxhkd -c ${XDG_CONFIG_HOME}/sxhkd/sxhkdrc
+run dunst
+
+run emacs --daemon
+run nm-applet
+run thunar --daemon
+run /usr/libexec/xfce-polkit
 
 run kitty
 
-if command -v dwm > /dev/null; then
-    run status_info
+if command -v $WM > /dev/null; then
+    case $WM in
+	openbox)
+	    run polybar -r
+	    run plank
+    run sxhkd -c ${XDG_CONFIG_HOME}/sxhkd/sxhkdrc
+	    ;;
+	herbstluftwm)
+	    run polybar -r
+	    run plank
+	    ;;
+	dwm)
+	    run status_info
+	    run stalonetray
+	    run sxhkd -c ${XDG_CONFIG_HOME}/sxhkd/sxhkdrc
+	    ;;
+    esac
 
     unset -f run
 
-    exec dwm
+    exec $WM
 fi
+

@@ -16,6 +16,8 @@ alias GFD="_g $XDG_FILES_DIR/dots"
 alias GFB="_g $XDG_FILES_DIR/bin"
 alias GFC="_g $XDG_FILES_DIR/code"
 alias GFD="_g $XDG_FILES_DIR/dots"
+alias GFS="_g $XDG_FILES_DIR/src"
+alias GFSS="_g $XDG_FILES_DIR/src/suckless"
 alias GDO="_g ~/downloads"
 alias GD="_g $XDG_DOCUMENTS_DIR"
 alias GI="_g $XDG_PICTURES_DIR"
@@ -27,15 +29,13 @@ alias GE="_g /etc"
 alias GM="_g /mnt"
 alias GT="_g /tmp"
 alias GV="_g /var"
-alias GS="_g $XDG_FILES_DIR/src"
-alias GSS="_g $XDG_FILES_DIR/src/suckless"
 alias GCF="_g $XDG_CONFIG_HOME"
 alias GCH="_g ~/.cache"
 
 YF() { cp "$@" $XDG_FILES_DIR ; }
 YFB() { cp "$@" $XDG_FILES_DIR/bin ; }
 YFC() { cp "$@" $XDG_FILES_DIR/code ; }
-YFSS() { cp "$@" $XDG_FILES_DIR/src ; }
+YFS() { cp "$@" $XDG_FILES_DIR/src ; }
 YD() { cp "$@" $XDG_DOCUMENTS_DIR ; }
 YI() { cp "$@" $XDG_PICTURES_DIR ; }
 YM() { cp "$@" $XDG_MUSIC_DIR ; }
@@ -46,11 +46,11 @@ YVI(){ cp "$@" $XDG_VIDEOS_DIR ; }
 MF() { mv "$@" $XDG_FILES_DIR ; }
 MFB() { mv "$@" $XDG_FILES_DIR/bin ; }
 MFC() { mv "$@" $XDG_FILES_DIR/code ; }
+MFS() { mv "$@" $XDG_FILES_DIR/src ; }
 MD() { mv "$@" $XDG_DOCUMENTS_DIR ; }
 MI() { mv "$@" $XDG_PICTURES_DIR ; }
 MM() { mv "$@" $XDG_MUSIC_DIR ; }
 MD() { mv "$@" ~/downloads ; }
-MS() { mv "$@" $XDG_FILES_DIR/src ; }
 MT() { mv "$@" /tmp  ; }
 MVI(){ mv "$@" $XDG_VIDEOS_DIR ; }
 MW() { mv "$@" $XDG_PICTURES_DIR/wallpapers ; }

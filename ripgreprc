@@ -1,5 +1,6 @@
 --glob=!plugged
 --glob=!node_modules
+--glob=!site-packages
 --glob=!dist
 --glob=!build
 --glob=!__pycache__

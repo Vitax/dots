@@ -22,16 +22,6 @@ return packer.startup(function()
         end,
     }
 
-    use {
-        "akinsho/bufferline.nvim",
-        config = function()
-            require("plugins.configs.bufferline")
-        end,
-        setup = function()
-            require("main.bindings").bufferline()
-        end,
-    }
-
     -- color related stuff
     use {
         "rakr/vim-one",
@@ -54,7 +44,7 @@ return packer.startup(function()
         "neovim/nvim-lspconfig",
         config = function()
             require("plugins.configs.lspconfig")
-        end
+        end,
     }
 
     use {
