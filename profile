@@ -17,9 +17,7 @@ PATH=${HOME}/.local/bin:$PATH
 PATH=${HOME}/node_modules/.bin:$PATH
 export PATH
 
-# MANPATH=$(printf '%s:' ${HOME}/.local/share/man/man1/*)
-MANPATH=${HOME}/.local/share/man/man1
-MANPATH="/usr/share/man/man1/:$MANPATH"
+MANPATH=${HOME}/.local/share/man/man1/:$MANPATH
 export MANPATH
 
 # ----------------------

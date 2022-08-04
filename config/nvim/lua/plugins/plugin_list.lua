@@ -90,6 +90,14 @@ return packer.startup(function()
         after = "cmp-nvim-lua",
     }
 
+    use {                                                                               
+        "akinsho/bufferline.nvim",                                                      
+        config = function()                                                             
+            require("plugins.configs.bufferline")                                       
+        end,                                                                            
+    }                                                                                   
+        
+
     use {
         "hrsh7th/cmp-buffer",
         after = "cmp-nvim-lsp",
@@ -120,6 +128,15 @@ return packer.startup(function()
 
     use {
         "nvim-lua/plenary.nvim",
+    }
+
+    use {
+	"windwp/nvim-autopairs",
+	config = function()
+	    require("plugins.configs.nvim_autopairs")
+	end,
+	setup = function() 
+	end
     }
 
     use {

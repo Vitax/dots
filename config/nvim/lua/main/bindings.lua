@@ -49,17 +49,6 @@ function bindings.misc()
 end
 
 -- region plugin_bindings
-function bindings.bufferline()
-    local m = cfg_bindings.bufferline
-
-    map("n", m.new_buffer, ":enew<CR>", silent_opt) -- new buffer
-    map("n", m.newtab, ":tabnew<CR>", silent_opt) -- new tab
-    map("n", m.close, ":lua require('main.utils').close_buffer() <CR>", silent_opt) 
-
-    map("n", m.cycleNext, ":BufferLineCycleNext<CR>", silent_opt)
-    map("n", m.cyclePrev, ":BufferLineCyclePrev<CR>", silent_opt)
-end
-
 function bindings.neoformat() 
     local m = cfg_bindings.neoformat.format
     map("n", m, ":Neoformat<CR>",silent_opt)

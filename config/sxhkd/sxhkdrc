@@ -40,3 +40,6 @@ control + Print
 shift + Print
     maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 
+super + End
+    pkill -USR1 redshift
+

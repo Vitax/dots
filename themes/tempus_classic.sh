@@ -1,5 +1,5 @@
 color0=#232323
-color1=#d4823d
+color1=#d2813d
 color2=#8c9e3d
 color3=#b1942b
 color4=#6e9cb0
@@ -19,5 +19,4 @@ background=#232323
 foreground=#aeadaf
 
 cursor=#aeadaf
-cursor2=#232323
 

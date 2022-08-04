@@ -31,6 +31,7 @@ setup-config:
 	ln -sf ${XDG_FILES_DIR}/dots/config/picom ${XDG_CONFIG_HOME}/
 	ln -sf ${XDG_FILES_DIR}/dots/config/redshift ${XDG_CONFIG_HOME}/
 	ln -sf ${XDG_FILES_DIR}/dots/ripgreprc ${HOME}/.ripgreprc
+	ln -sf ${XDG_FILES_DIR}/dots/stalonetrayrc ${HOME}/.stalonetrayrc
 	ln -sf ${XDG_FILES_DIR}/dots/config/sxhkd ${XDG_CONFIG_HOME}/
 	ln -sf ${XDG_FILES_DIR}/dots/config/tmux ${XDG_CONFIG_HOME}/
 
@@ -62,6 +63,7 @@ clean-config:
 	rm ${XDG_CONFIG_HOME}/picom
 	rm ${XDG_CONFIG_HOME}/redshift
 	rm ${HOME}/.ripgreprc
+	rm ${HOME}/.stalonetrayrc
 	rm ${XDG_CONFIG_HOME}/sxhkd
 	rm ${XDG_CONFIG_HOME}/tmux
 

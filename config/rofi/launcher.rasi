@@ -1,7 +1,7 @@
 @import "~/.cache/themes/colors.rasi"
 
 configuration {
-    font: "Noto Sans 12";
+    font: "Noto Sans Mono 14";
     show-icons: true;
     icon-theme: "Arc";
     display-drun: "";
@@ -13,6 +13,7 @@ configuration {
 window {
     background-color: @background;
     text-color: @foreground;
+    border: 4px;
     padding: 2%;
     width: 45%;
     height: 67%;
