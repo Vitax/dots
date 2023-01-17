@@ -2,11 +2,12 @@
 # vim:ft=config
 
 # Helpers
-WM=dwm
+WM=xmonad
 
 run() {
     cmd=$1
     shift
+
     if command -v $cmd >/dev/null && ! pgrep -f $cmd >/dev/null ; then
         printf 'Starting: %s\n' $cmd
         $cmd "$@" &
@@ -32,37 +33,17 @@ setxkbmap -option 'grp_led:caps'
 run nitrogen --restore
 
 run xfsettingsd
-run xfce4-power-manager
-run xss-lock -- slock
-run picom --config ${XDG_CONFIG_HOME}/picom/picom.conf --experimental-backends
+run xss-lock -- betterlockscreen --wall --blur -l
+run picom --config ${XDG_CONFIG_HOME}/picom/picom.conf
 run redshift -c ${XDG_CONFIG_HOME}/redshift/redshift.conf
 run dunst
 
-run emacs --daemon
 run nm-applet
-run thunar --daemon
-run /usr/libexec/xfce-polkit
+run pcmanfm -d
 
-run kitty
+run alacritty
 
 if command -v $WM > /dev/null; then
-    case $WM in
-	openbox)
-	    run polybar -r
-	    run plank
-    run sxhkd -c ${XDG_CONFIG_HOME}/sxhkd/sxhkdrc
-	    ;;
-	herbstluftwm)
-	    run polybar -r
-	    run plank
-	    ;;
-	dwm)
-	    run status_info
-	    run stalonetray
-	    run sxhkd -c ${XDG_CONFIG_HOME}/sxhkd/sxhkdrc
-	    ;;
-    esac
-
     unset -f run
 
     exec $WM

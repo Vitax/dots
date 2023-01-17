@@ -7,9 +7,10 @@ XDG_FILES_DIR=${HOME}/files
 install-pkg: 
 	sudo xbps-install -y \
 		xorg-minimal xsetroot xset xrdb xinit xmodmap \
-		libXft-devel libXinerama-devel curl \
-		xfce4-settings xfce4-power-manager exo \
-		Thunar thunar-volman gvfs gvfs-mtp \
+		elogind dbus dbus-elogind dbus-elogind-libs dbus-elogind-x11 polkit \
+		curl \
+		xsettingsd exo \
+		pcmanfm gvfs gvfs-mtp \
 		kitty zsh xclip maim exa ranger ripgrep \
 		nitrogen picom redshift dunst sxhkd network-manager-applet
 

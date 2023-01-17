@@ -6,6 +6,8 @@ umask 022
 # ------------------
 export LIBVA_DRIVER_NAME=iHD
 
+export $(dbus-launch)
+
 # Set system path
 # ---------------
 PATH=/bin:/sbin
@@ -13,6 +15,8 @@ PATH=/usr/sbin:/usr/bin:$PATH
 PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
 PATH=${HOME}/bin:$PATH
+PATH=${HOME}/.cabal/bin:$PATH
+PATH=${HOME}/.cargo/bin:$PATH
 PATH=${HOME}/.local/bin:$PATH
 PATH=${HOME}/node_modules/.bin:$PATH
 export PATH
@@ -90,3 +94,4 @@ export MPD_HOST="${HOME}/.config/mpd/socket"
 rm -rf ${HOME}/tmp 2>/dev/null ||:
 mkdir -p ${HOME}/tmp
 
+. "$HOME/.cargo/env"

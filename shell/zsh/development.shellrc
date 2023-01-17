@@ -15,11 +15,6 @@ rcp() {
             sh ./build "$@"
             cd - >/dev/null
             ;;
-        dwmblocks)
-            cd "${XDG_FILES_DIR}"/src/dwmblocks
-            sh ./build "$@"
-            cd - >/dev/null
-            ;;
         *)
            printf '%s\n' "No build process found"
     esac

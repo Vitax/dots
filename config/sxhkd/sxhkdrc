@@ -5,10 +5,10 @@ super + p
     launchers rofi -theme ${XDG_CONFIG_HOME}/rofi/launcher
 
 super + Return
-    kitty
+    stwrapper
 
 super + e
-    thunar
+    pcmanfm
 
 super + shift + e
     emacsclient -c -a "emacs"
