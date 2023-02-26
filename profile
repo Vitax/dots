@@ -2,21 +2,18 @@
 
 umask 022
 
-# Intel acceleration
-# ------------------
-export LIBVA_DRIVER_NAME=iHD
-
 export $(dbus-launch)
 
 # Set system path
 # ---------------
-PATH=/bin:/sbin
-PATH=/usr/sbin:/usr/bin:$PATH
-PATH=/usr/local/sbin:/usr/local/bin:$PATH
-
-PATH=${HOME}/bin:$PATH
-PATH=${HOME}/.cabal/bin:$PATH
-PATH=${HOME}/.cargo/bin:$PATH
+#PATH=/bin:/sbin
+#PATH=/usr/sbin:/usr/bin:$PATH
+#PATH=/usr/local/sbin:/usr/local/bin:$PATH
+SYS_PATH=$PATH
+PATH=$SYS_PATH
+for dir in ${HOME}/bin/*; do
+	PATH=${dir}:$PATH
+done
 PATH=${HOME}/.local/bin:$PATH
 PATH=${HOME}/node_modules/.bin:$PATH
 export PATH
@@ -30,9 +27,6 @@ export LANG="$LC_CTYPE" \
        LANGUAGE="$LC_CTYPE" \
        LOCALE="$LC_CTYPE" \
        LC_ALL="$LC_CTYPE"
-
-export XDG_SESSION_TYPE=X11
-export XDG_CURRENT_DESKTOP=X11
 
 # Set editor
 # ----------
@@ -91,7 +85,6 @@ export MPD_HOST="${HOME}/.config/mpd/socket"
 
 # Empty ${HOME}/tmp folder on startup
 # -----------------------------------
-rm -rf ${HOME}/tmp 2>/dev/null ||:
+rm -rf ${HOME}/Downloads 2>/dev/null
+rm -rf ${HOME}/tmp 2>/dev/null
 mkdir -p ${HOME}/tmp
-
-. "$HOME/.cargo/env"

@@ -3,17 +3,6 @@
 XDG_CONFIG_HOME=${HOME}/.config
 XDG_FILES_DIR=${HOME}/files
 
-# Install required packages in one go
-install-pkg: 
-	sudo xbps-install -y \
-		xorg-minimal xsetroot xset xrdb xinit xmodmap \
-		elogind dbus dbus-elogind dbus-elogind-libs dbus-elogind-x11 polkit \
-		curl \
-		xsettingsd exo \
-		pcmanfm gvfs gvfs-mtp \
-		kitty zsh xclip maim exa ranger ripgrep \
-		nitrogen picom redshift dunst sxhkd network-manager-applet
-
 # SetUp configuration files
 # -------------------------
 setup: setup-x setup-config setup-shell setup-fonts setup-bin
@@ -31,8 +20,8 @@ setup-config:
 	ln -sf ${XDG_FILES_DIR}/dots/config/nvim ${XDG_CONFIG_HOME}/
 	ln -sf ${XDG_FILES_DIR}/dots/config/picom ${XDG_CONFIG_HOME}/
 	ln -sf ${XDG_FILES_DIR}/dots/config/redshift ${XDG_CONFIG_HOME}/
+	ln -sf ${XDG_FILES_DIR}/dots/config/kitty ${XDG_CONFIG_HOME}/
 	ln -sf ${XDG_FILES_DIR}/dots/ripgreprc ${HOME}/.ripgreprc
-	ln -sf ${XDG_FILES_DIR}/dots/stalonetrayrc ${HOME}/.stalonetrayrc
 	ln -sf ${XDG_FILES_DIR}/dots/config/sxhkd ${XDG_CONFIG_HOME}/
 	ln -sf ${XDG_FILES_DIR}/dots/config/tmux ${XDG_CONFIG_HOME}/
 
@@ -64,7 +53,6 @@ clean-config:
 	rm ${XDG_CONFIG_HOME}/picom
 	rm ${XDG_CONFIG_HOME}/redshift
 	rm ${HOME}/.ripgreprc
-	rm ${HOME}/.stalonetrayrc
 	rm ${XDG_CONFIG_HOME}/sxhkd
 	rm ${XDG_CONFIG_HOME}/tmux
 

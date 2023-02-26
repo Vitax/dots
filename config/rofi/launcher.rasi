@@ -1,10 +1,9 @@
 @import "~/.cache/themes/colors.rasi"
 
 configuration {
-    font: "Noto Sans Mono 14";
+    font: "Fantasque Sans 12";
     show-icons: true;
-    icon-theme: "Arc";
-    display-drun: "";
+    display-drun: "";
     drun-display-format: "{name}";
     disable-history: false;
     sidebar-mode: false;
@@ -14,7 +13,7 @@ window {
     background-color: @background;
     text-color: @foreground;
     border: 4px;
-    padding: 2%;
+    padding: 12px;
     width: 45%;
     height: 67%;
 }
@@ -29,10 +28,10 @@ prompt {
 entry {
     background-color: @background;
     text-color: @foreground;
-    placeholder-color: @foreground;
+    placeholder-color: @foreground-alt;
     expand: true;
     horizontal-align: 0;
-    placeholder: "Search Applications";
+    placeholder: "Search...";
     padding: 0.15% 0% 0% 0%;
     blink: true;
 }
@@ -42,10 +41,11 @@ inputbar {
     background-color: @background;
     text-color: @foreground;
     expand: false;
-    border:	0% 0% 0.3% 0%;
-    border-radius:                  0% 0% 0% 0%;
-    border-color: @border-alt;
-    padding: 1%;
+    border:	1px;
+    border-radius: 0% 0% 0% 0%;
+    border-color: #efefef;
+    padding: 1.25%;
+    margin: 0% 0% 0.3% 0%;
     position: center;
 }
 
@@ -68,6 +68,7 @@ mainbox {
 element {
     background-color: @background;
     text-color: @foreground;
+    border-radius: 8px;
     orientation: horizontal;
     padding: 1% 0% 1% 0%;
 }

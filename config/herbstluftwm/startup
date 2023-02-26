@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+set -e
+
+run() {
+    cmd=$1
+    shift
+
+    if command -v $cmd >/dev/null && ! pgrep -f $cmd >/dev/null ; then
+        printf 'Starting: %s\n' $cmd
+        $cmd "$@" &
+    fi
+}
+
+run dunst
+
+run nm-applet
+run nitrogen --restore
+
+run pcmanfm -d
+run picom --config ${XDG_CONFIG_HOME}/picom/picom.conf
+run polybar main --reload
+run plank
+
+run redshift -c ${XDG_CONFIG_HOME}/redshift/redshift.conf
+
+unset -f run

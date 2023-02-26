@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+pkill tint2
+
+sleep 1
+
+tint2 &

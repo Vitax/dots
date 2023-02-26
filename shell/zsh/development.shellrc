@@ -4,10 +4,15 @@ alias mkc='make clean'
 alias mki='make install'
 alias mku='make uninstall'
 alias mks='make -s install'
+
+alias py=python3
+
 alias rustup='curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh'
 
+# quick recompile things
+alias nrcp='sudo nixos-rebuild'
+alias nrcp-cl='sudo nix-collect-garbage --delete-older-than 30d'
 
-# quick recompile
 rcp() {
     case $1 in
         st|dwm|dmenu|surf|tabbed|sent|slock)
@@ -21,13 +26,12 @@ rcp() {
 }
 
 ## docker shortcuts
-alias sdc="sudo docker-compose"
+alias dc="docker-compose"
 
 ## launch tmux with config
 alias tmux="tmux -f ${XDG_CONFIG_HOME}/tmux/tmux.conf"
 
 ## rebind applications
 alias vim="nvim"
+alias svim='sudo -E -s nvim'
 
-## create aliases for commonly used remote desktop session
-alias rdp_work="xfreerdp /d:test.local /u:adminCaglar /v:192.168.1.100 /dynamic-resolution"

@@ -2,7 +2,7 @@
 # vim:ft=config
 
 # Helpers
-WM=xmonad
+WM=i3
 
 run() {
     cmd=$1
@@ -24,24 +24,21 @@ setxkbmap -option 'grp_led:caps'
     xrdb load ${HOME}/.Xresources
     xmodmap ~/.xmodmaprc
     xsetroot -cursor_name left_ptr
-    xset r off
+    xset r 5 250
     xset m 0 0
     xset b off
     xset s 300 300
 }
 
-run nitrogen --restore
-
-run xfsettingsd
-run xss-lock -- betterlockscreen --wall --blur -l
-run picom --config ${XDG_CONFIG_HOME}/picom/picom.conf
-run redshift -c ${XDG_CONFIG_HOME}/redshift/redshift.conf
 run dunst
-
+run kitty
+run nitrogen --restore
 run nm-applet
 run pcmanfm -d
-
-run alacritty
+run picom --config ${XDG_CONFIG_HOME}/picom/picom.conf
+run redshift -c ${XDG_CONFIG_HOME}/redshift/redshift.conf
+run xsettingsd
+run xss-lock -- slock
 
 if command -v $WM > /dev/null; then
     unset -f run

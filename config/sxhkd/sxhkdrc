@@ -5,13 +5,13 @@ super + p
     launchers rofi -theme ${XDG_CONFIG_HOME}/rofi/launcher
 
 super + Return
-    stwrapper
+    kitty
 
 super + e
     pcmanfm
 
 super + shift + e
-    emacsclient -c -a "emacs"
+    emacs
 
 super + shift + Delete
     powermenu
