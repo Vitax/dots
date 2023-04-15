@@ -1,30 +1,67 @@
-vim.opt.number = true
+local globals = require("main.globals")
 
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-vim.opt.smarttab = true
+local cmd = vim.cmd
+local opt = vim.opt
+local g = vim.g
 
-vim.opt.clipboard:append { 'unnamedplus' }
+opt.number = true
+opt.title = true
 
-vim.opt.textwidth = 80
-vim.opt.wrap = true
+opt.syntax = on
+opt.termguicolors = true
+opt.background = globals.ui.background
+cmd("colorscheme " .. globals.ui.theme)
 
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
-vim.opt.smartcase = true
+opt.shiftwidth = 2
+opt.tabstop = 2
+opt.expandtab = true
+opt.smartindent = true
+opt.smarttab = true
 
-vim.opt.syntax = on
+opt.clipboard:append { 'unnamedplus' }
+opt.ignorecase = true
+opt.smartcase = true
 
-vim.opt.foldmethod = 'manual'
+opt.textwidth = 80
+opt.wrap = true
 
-vim.opt.wildignore:append {
-  '__pycache__', 'node_modules', '*pyc', '*.o', '*.a'
+opt.hlsearch = true
+opt.incsearch = true
+opt.smartcase = true
+
+opt.foldmethod = 'manual'
+
+opt.wildignore:append {
+  '.git', '__pycache__', 'node_modules', '*pyc', '*.o', '*.a'
 }
 
-vim.opt.swapfile = false
-vim.opt.switchbuf = 'vsplit'
+opt.swapfile = false
 
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_netrw = 1
+opt.switchbuf = 'vsplit'
+opt.splitbelow = true
+opt.splitright = true
+
+local disabled_built_ins = {
+   "netrw",
+   "netrwPlugin",
+   "netrwSettings",
+   "netrwFileHandlers",
+   "gzip",
+   "zip",
+   "zipPlugin",
+   "tar",
+   "tarPlugin",
+   "getscript",
+   "getscriptPlugin",
+   "vimball",
+   "vimballPlugin",
+   "2html_plugin",
+   "logipat",
+   "rrhelper",
+   "spellfile_plugin",
+   "matchit",
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+   g["loaded_" .. plugin] = 1
+end

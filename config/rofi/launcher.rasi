@@ -12,7 +12,9 @@ configuration {
 window {
     background-color: @background;
     text-color: @foreground;
-    border: 4px;
+    border: 3px;
+    border-color: @foreground;
+    border-radius: 10px;
     padding: 12px;
     width: 45%;
     height: 67%;
@@ -41,7 +43,7 @@ inputbar {
     background-color: @background;
     text-color: @foreground;
     expand: false;
-    border:	1px;
+    border:	0px;
     border-radius: 0% 0% 0% 0%;
     border-color: #efefef;
     padding: 1.25%;

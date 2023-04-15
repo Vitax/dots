@@ -1,4 +1,4 @@
-.PHONY: setup setup-x setup-config setup-fonts clean clean-x clean-config clean-fonts
+.PHONY: setup setup-x setup-config setup-awesome setup-herbstluftwm setup-fonts clean clean-x clean-config clean-fonts clean-wm clean-bin
 
 XDG_CONFIG_HOME=${HOME}/.config
 XDG_FILES_DIR=${HOME}/files
@@ -25,13 +25,20 @@ setup-config:
 	ln -sf ${XDG_FILES_DIR}/dots/config/sxhkd ${XDG_CONFIG_HOME}/
 	ln -sf ${XDG_FILES_DIR}/dots/config/tmux ${XDG_CONFIG_HOME}/
 
+setup-awesome:
+	ln -sf ${XDG_FILES_DIR}/dots/config/awesome ${XDG_CONFIG_HOME}/
+
+setup-herbstluftwm:
+	ln -sf ${XDG_FILES_DIR}/dots/config/herbstluftwm ${XDG_CONFIG_HOME}/
+	ln -sf ${XDG_FILES_DIR}/dots/config/polybar ${XDG_CONFIG_HOME}/
+
 setup-shell:
 	ln -sf ${XDG_FILES_DIR}/dots/shell/zsh/main.shellrc ${HOME}/.zshrc
 
 setup-fonts:
 	[ -d ${XDG_DATA_HOME}/.fonts ] && rm ${XDG_DATA_HOME}/.fonts ; \
-	ln -sf ${XDG_DATA_XDG_FILES_DIR}/dots/fonts ${XDG_DATA_HOME}/.fonts ; \
-	fc-cache -fv
+		ln -sf ${XDG_DATA_XDG_FILES_DIR}/dots/fonts ${XDG_DATA_HOME}/.fonts ; \
+		fc-cache -fv
 
 setup-bin:
 	ln -sf ${XDG_FILES_DIR}/bin ${HOME}
@@ -56,12 +63,17 @@ clean-config:
 	rm ${XDG_CONFIG_HOME}/sxhkd
 	rm ${XDG_CONFIG_HOME}/tmux
 
+clean-wm:
+	rm ${XDG_CONFIG_HOME}/awesome
+	rm ${XDG_CONFIG_HOME}/herbstluftwm
+	rm ${XDG_CONFIG_HOME}/polybar
+
 clean-shell:
 	rm ${HOME}/.zshrc
 
 clean-fonts:
 	rm ${XDG_DATA_HOME}/.fonts ; \
-	fc-cache -fv
+		fc-cache -fv
 
 clean-bin:
 	rm ${HOME}/bin

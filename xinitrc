@@ -2,7 +2,7 @@
 # vim:ft=config
 
 # Helpers
-WM=i3
+WM=awesome
 
 run() {
     cmd=$1
@@ -37,8 +37,9 @@ run nm-applet
 run pcmanfm -d
 run picom --config ${XDG_CONFIG_HOME}/picom/picom.conf
 run redshift -c ${XDG_CONFIG_HOME}/redshift/redshift.conf
-run xsettingsd
-run xss-lock -- slock
+run xfsettingsd
+run xfce4-power-manager
+# run xss-lock -- slock
 
 if command -v $WM > /dev/null; then
     unset -f run
